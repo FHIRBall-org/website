@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactForm from '../components/ContactForm.astro';
+---
+
+<BaseLayout title="Contact Us" description="Get in touch with the FHIRBall Alliance">
+  <div class="max-w-3xl mx-auto px-4 py-12">
+    <h1 class="text-4xl font-bold text-text">Contact Us</h1>
+    <p class="mt-4 text-lg text-text-light">
+      Interested in joining the FHIRBall Alliance or learning more about our mission? We'd love to hear from you.
+    </p>
+
+    <div class="mt-12">
+      <ContactForm />
+    </div>
+  </div>
+</BaseLayout>

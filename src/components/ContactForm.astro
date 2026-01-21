@@ -1,0 +1,63 @@
+---
+// Replace with your Formspree form ID
+const FORMSPREE_ID = 'YOUR_FORMSPREE_ID';
+---
+
+<form
+  action={`https://formspree.io/f/${FORMSPREE_ID}`}
+  method="POST"
+  class="space-y-6"
+>
+  <div>
+    <label for="name" class="block text-sm font-medium text-text">Name</label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      required
+      class="mt-1 block w-full rounded border border-border px-4 py-2 text-text focus:border-primary focus:ring-1 focus:ring-primary outline-none"
+    />
+  </div>
+
+  <div>
+    <label for="email" class="block text-sm font-medium text-text">Email</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      required
+      class="mt-1 block w-full rounded border border-border px-4 py-2 text-text focus:border-primary focus:ring-1 focus:ring-primary outline-none"
+    />
+  </div>
+
+  <div>
+    <label for="message" class="block text-sm font-medium text-text">Message</label>
+    <textarea
+      id="message"
+      name="message"
+      rows="5"
+      required
+      class="mt-1 block w-full rounded border border-border px-4 py-2 text-text focus:border-primary focus:ring-1 focus:ring-primary outline-none resize-y"
+    ></textarea>
+  </div>
+
+  <div class="flex items-start gap-2">
+    <input
+      type="checkbox"
+      id="privacy"
+      name="privacy"
+      required
+      class="mt-1"
+    />
+    <label for="privacy" class="text-sm text-text-light">
+      I agree to the processing of my personal data in accordance with the privacy policy.
+    </label>
+  </div>
+
+  <button
+    type="submit"
+    class="bg-primary hover:bg-primary-hover text-white px-6 py-3 rounded font-medium transition-colors"
+  >
+    Send Message
+  </button>
+</form>
