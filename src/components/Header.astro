@@ -1,0 +1,83 @@
+---
+const navLinks = [
+  { href: '/purpose', label: 'Purpose' },
+  { href: '/why-fhir', label: 'Why FHIR' },
+  { href: '/members', label: 'Our Members' },
+  { href: '/articles', label: 'Articles' },
+  { href: '/events', label: 'Industry Events' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="bg-white border-b border-border">
+  <nav class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+    <a href="/" class="text-xl font-bold text-primary">
+      FHIRBall
+    </a>
+
+    <!-- Desktop nav -->
+    <div class="hidden md:flex items-center gap-6">
+      {navLinks.map(link => (
+        <a
+          href={link.href}
+          class:list={[
+            'text-sm font-medium transition-colors',
+            currentPath === link.href ? 'text-primary' : 'text-text hover:text-primary'
+          ]}
+        >
+          {link.label}
+        </a>
+      ))}
+      <a
+        href="/contact"
+        class="bg-primary hover:bg-primary-hover text-white px-4 py-2 rounded text-sm font-medium transition-colors"
+      >
+        Contact Now
+      </a>
+    </div>
+
+    <!-- Mobile menu button -->
+    <button
+      id="mobile-menu-btn"
+      class="md:hidden p-2"
+      aria-label="Toggle menu"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile nav -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-border">
+    <div class="px-4 py-4 space-y-3">
+      {navLinks.map(link => (
+        <a
+          href={link.href}
+          class:list={[
+            'block text-sm font-medium',
+            currentPath === link.href ? 'text-primary' : 'text-text'
+          ]}
+        >
+          {link.label}
+        </a>
+      ))}
+      <a
+        href="/contact"
+        class="block bg-primary text-white px-4 py-2 rounded text-sm font-medium text-center"
+      >
+        Contact Now
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+
+  btn?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+  });
+</script>
