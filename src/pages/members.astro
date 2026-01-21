@@ -1,0 +1,33 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import MemberCard from '../components/MemberCard.astro';
+
+const members = await getCollection('members');
+const sortedMembers = members.sort((a, b) =>
+  a.data.name.localeCompare(b.data.name)
+);
+---
+
+<BaseLayout title="Our Members" description="Meet the members of the FHIRBall Alliance">
+  <div class="max-w-6xl mx-auto px-4 py-12">
+    <h1 class="text-4xl font-bold text-text">Our Members</h1>
+    <p class="mt-4 text-lg text-text-light">
+      The FHIRBall Alliance brings together leading companies committed to advancing healthcare interoperability through FHIR.
+    </p>
+
+    <div class="mt-12 grid gap-6">
+      {sortedMembers.map(async (member) => {
+        const { Content } = await member.render();
+        return (
+          <MemberCard
+            name={member.data.name}
+            logo={member.data.logo}
+            website={member.data.website}
+            description={member.data.description}
+          />
+        );
+      })}
+    </div>
+  </div>
+</BaseLayout>
