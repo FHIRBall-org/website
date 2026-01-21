@@ -1,0 +1,42 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  pubDate: Date;
+  slug: string;
+  image?: string;
+}
+
+const { title, description, pubDate, slug, image } = Astro.props;
+
+const formattedDate = pubDate.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<article class="bg-white border border-border rounded-lg overflow-hidden hover:shadow-md transition-shadow">
+  {image && (
+    <img
+      src={image}
+      alt=""
+      class="w-full h-48 object-cover"
+    />
+  )}
+  <div class="p-6">
+    <time class="text-sm text-text-light">{formattedDate}</time>
+    <h2 class="mt-2 text-xl font-semibold text-text">
+      <a href={`/articles/${slug}`} class="hover:text-primary transition-colors">
+        {title}
+      </a>
+    </h2>
+    <p class="mt-2 text-text-light">{description}</p>
+    <a
+      href={`/articles/${slug}`}
+      class="inline-block mt-4 text-sm text-primary hover:text-primary-hover font-medium"
+    >
+      Read more &rarr;
+    </a>
+  </div>
+</article>
