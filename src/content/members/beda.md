@@ -1,5 +1,6 @@
 ---
 name: "Beda"
+logo: "/images/members/beda.png"
 website: "https://beda.software"
 description: "Beda Software provides open-source FHIR implementation tools and consulting services."
 category: "founding"
