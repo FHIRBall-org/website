@@ -70,10 +70,11 @@ test.describe('Contact Form', () => {
     await expect(form.locator('button[type="submit"]')).toBeVisible();
   });
 
-  test('should have correct form action', async ({ page }) => {
+  test('should have correct form attributes for Netlify', async ({ page }) => {
     const form = page.locator('#contact form');
-    await expect(form).toHaveAttribute('action', /formsubmit\.co/);
+    await expect(form).toHaveAttribute('data-netlify', 'true');
     await expect(form).toHaveAttribute('method', 'POST');
+    await expect(form).toHaveAttribute('name', 'contact');
   });
 
   test('should have required fields marked as required', async ({ page }) => {

@@ -171,9 +171,8 @@ const featuredMembers = sortedMembers.slice(0, 4);
           <p class="text-green-800 font-medium">Thank you! Your message has been sent. We'll get back to you soon.</p>
         </div>
 
-        <form action="https://formsubmit.co/jeff.helman@aegis.net" method="POST" class="mt-6 space-y-4">
-          <input type="hidden" name="_subject" value="New FHIRBall Contact Form Submission" />
-          <input type="hidden" name="_next" value="https://fhirball.org/?submitted=true#contact" />
+        <form name="contact" method="POST" data-netlify="true" action="/?submitted=true#contact" class="mt-6 space-y-4">
+          <input type="hidden" name="form-name" value="contact" />
           <div>
             <input
               type="email"
