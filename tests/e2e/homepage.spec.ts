@@ -75,6 +75,7 @@ test.describe('Contact Form', () => {
     await expect(form).toHaveAttribute('data-netlify', 'true');
     await expect(form).toHaveAttribute('method', 'POST');
     await expect(form).toHaveAttribute('name', 'contact');
+    await expect(form).toHaveAttribute('action', '/thank-you');
   });
 
   test('should have required fields marked as required', async ({ page }) => {
@@ -89,14 +90,20 @@ test.describe('Contact Form', () => {
     await expect(form.locator('input[name="phone"]')).toHaveAttribute('type', 'tel');
   });
 
-  test('should display success message when submitted', async ({ page }) => {
-    await page.goto('/?submitted=true#contact');
-    const successMessage = page.getByText(/Thank you! Your message has been sent/i);
-    await expect(successMessage).toBeVisible();
+});
+
+test.describe('Thank You Page', () => {
+  test('should display success message', async ({ page }) => {
+    await page.goto('/thank-you');
+    await expect(page.locator('h1')).toContainText('Thank You');
+    await expect(page.getByText(/Your message has been sent/i)).toBeVisible();
   });
 
-  test('should not display success message by default', async ({ page }) => {
-    const successMessage = page.getByText(/Thank you! Your message has been sent/i);
-    await expect(successMessage).not.toBeVisible();
+  test('should have link back to homepage', async ({ page }) => {
+    await page.goto('/thank-you');
+    const homeLink = page.getByRole('link', { name: /Back to Homepage/i });
+    await expect(homeLink).toBeVisible();
+    await homeLink.click();
+    await expect(page).toHaveURL('/');
   });
 });

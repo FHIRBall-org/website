@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Thank You - FHIRBall">
+  <section class="min-h-[60vh] flex items-center justify-center py-20">
+    <div class="max-w-xl mx-auto px-5 text-center">
+      <div class="bg-white rounded-2xl p-8 md:p-12 shadow-lg">
+        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+          <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+        </div>
+        <h1 class="text-3xl font-bold text-text mb-4">Thank You!</h1>
+        <p class="text-text-light text-lg mb-8">
+          Your message has been sent successfully. We'll get back to you soon.
+        </p>
+        <a
+          href="/"
+          class="inline-block bg-primary hover:bg-primary-hover text-white px-8 py-3 rounded font-medium transition-colors"
+        >
+          Back to Homepage
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
