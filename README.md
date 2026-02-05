@@ -51,6 +51,7 @@ npm run preview
 
 ```
 ├── public/
+│   ├── form.html         # Static form for Netlify detection
 │   └── images/           # Static images
 │       ├── backgrounds/  # Background images
 │       └── members/      # Member logos
@@ -65,6 +66,7 @@ npm run preview
 │   │   ├── why-fhir.astro
 │   │   ├── members.astro
 │   │   ├── search.astro
+│   │   ├── thank-you.astro  # Form submission confirmation
 │   │   └── members/      # Dynamic member detail pages
 │   └── styles/
 │       └── global.css    # Global styles
@@ -148,10 +150,34 @@ The contact form uses Netlify Forms for submission handling:
 
 - Submissions are stored in the Netlify dashboard (Forms section)
 - Email notifications can be configured in Netlify settings
-- Built-in spam protection available (honeypot, reCAPTCHA)
+- Built-in spam protection via honeypot field
 - 100 free submissions/month on the free tier
 
-After form submission, users are redirected back to the homepage with a success message.
+### How It Works
+
+1. **Form Detection:** Netlify detects forms at build time. A static `public/form.html` file ensures the form is detected even with Astro's build process.
+
+2. **Submission:** When users submit the form, Netlify intercepts the POST request, stores the data, and triggers any configured notifications.
+
+3. **Confirmation:** Users are redirected to `/thank-you` with a success message and link back to the homepage.
+
+### Form Fields
+
+| Field | Type | Required |
+|-------|------|----------|
+| email | email | Yes |
+| firstName | text | No |
+| lastName | text | No |
+| phone | tel | No |
+| comment | textarea | Yes |
+
+### Modifying the Form
+
+If you add or remove form fields:
+
+1. Update the form in `src/pages/index.astro`
+2. Update the static form in `public/form.html` to match
+3. Redeploy for Netlify to detect the changes
 
 ## License
 
