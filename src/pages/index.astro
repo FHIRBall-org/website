@@ -1,141 +1,261 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import MemberCardCompact from '../components/MemberCardCompact.astro';
 
 const members = await getCollection('members');
 const sortedMembers = members.sort((a, b) =>
   a.data.name.localeCompare(b.data.name)
 );
-
-const benefits = [
-  { title: 'Industry Influence', description: 'Shape the future of healthcare interoperability' },
-  { title: 'Expert Community', description: 'Connect with FHIR implementation experts' },
-  { title: 'Directory Listing', description: 'Showcase your solutions to healthcare buyers' },
-  { title: 'Event Participation', description: 'Exhibit at major industry conferences' },
-  { title: 'Marketing Amplification', description: 'Leverage collective marketing reach' },
-  { title: 'Thought Leadership', description: 'Contribute to industry best practices' },
-];
+// Show only first 4 members on homepage
+const featuredMembers = sortedMembers.slice(0, 4);
 ---
 
-<BaseLayout title="Home">
+<BaseLayout title="FHIRBall - The FHIR Business Alliance">
   <!-- Hero Section -->
-  <section class="bg-surface py-20">
-    <div class="max-w-6xl mx-auto px-4 text-center">
-      <h1 class="text-5xl font-bold text-text">Better Data for Better Health</h1>
-      <p class="mt-6 text-xl text-text-light max-w-2xl mx-auto">
-        The FHIRBall Alliance is driving FHIR adoption to enable seamless healthcare data exchange.
-      </p>
-      <div class="mt-8 flex gap-4 justify-center">
+  <section class="hero-section relative min-h-[400px] flex items-center overflow-hidden">
+    <div class="hero-bg absolute inset-0 z-0 bg-cover bg-center"></div>
+    <div class="relative z-10 w-full max-w-[1200px] mx-auto px-5 py-16">
+      <h2 class="hero-heading text-[30px] md:text-[50px] lg:text-[72px] font-bold text-white uppercase">BETTER DATA FOR BETTER HEALTH</h2>
+      <h3 class="hero-subheading mt-6 text-[16px] md:text-[20px] text-white/90 max-w-[70%] font-normal">
+        Learn about the history of HL7® FHIR®, how FHIRBall members will shape it, and how you can be part of the future of interoperability.
+      </h3>
+      <div class="mt-8">
         <a
-          href="/purpose"
-          class="bg-primary hover:bg-primary-hover text-white px-6 py-3 rounded font-medium transition-colors"
+          href="/why-fhir"
+          class="inline-block border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 py-3 font-medium transition-colors"
         >
           Learn More
         </a>
-        <a
-          href="/contact"
-          class="border border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded font-medium transition-colors"
-        >
-          Join Us
-        </a>
       </div>
+      <p class="mt-6 text-white/90">
+        <a href="https://app.himssconference.com/event/himss-2026/exhibitor/RXhoaWJpdG9yXzIxMTI3ODM=" class="hover:text-white" target="_blank" rel="noopener">Going to HIMSS26</a>? Drop by our <a href="https://app.himssconference.com/event/himss-2026/exhibitor/RXhoaWJpdG9yXzIxMTI3ODM=" class="font-bold hover:text-white" target="_blank" rel="noopener">FHIRBall Pavilion</a>
+      </p>
     </div>
   </section>
 
   <!-- Who We Are -->
-  <section class="py-16">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-text">Who We Are</h2>
-      <p class="mt-4 text-lg text-text-light max-w-3xl">
-        The FHIRBall Alliance is a group of companies that have joined forces to promote and market their FHIR-based tools and solutions. Together, we're advancing healthcare interoperability.
-      </p>
-      <a href="/purpose" class="inline-block mt-4 text-primary hover:text-primary-hover font-medium">
-        Learn more about our purpose &rarr;
-      </a>
+  <section class="py-10">
+    <div class="max-w-[1200px] mx-auto px-5">
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div class="flex items-center">
+          <h2 class="section-heading-normal text-[32px] font-bold text-text">Who we are</h2>
+        </div>
+        <div>
+          <p class="text-[14px] text-text leading-[20px]">
+            The FHIR Business Alliance (FHIRBall) is a group of companies that have joined forces to promote and market their FHIR-based tools and solutions.
+          </p>
+          <p class="mt-4 text-[14px] text-text leading-[20px]">
+            Our goal is to drive the healthcare industry forward by spreading the use of FHIR.
+          </p>
+          <a href="/purpose" class="inline-block mt-6 border border-text text-text hover:bg-text hover:text-white px-5 py-2 font-medium transition-colors">
+            Read About Our Purpose
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Members -->
-  <section class="py-16 bg-surface">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-text">Our Members</h2>
-      <p class="mt-4 text-lg text-text-light">
-        Leading companies committed to FHIR-based healthcare interoperability.
-      </p>
+  <section class="py-10 bg-surface">
+    <div class="max-w-[1200px] mx-auto px-5">
+      <h2 class="section-heading-tight text-[24px] md:text-[32px] font-bold text-text text-center">
+        Our members are leaders in FHIR-based interoperability solutions.
+      </h2>
 
-      <div class="mt-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {sortedMembers.map((member) => (
-          <MemberCardCompact
-            name={member.data.name}
-            logo={member.data.logo}
-            website={member.data.website}
-          />
+      <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {featuredMembers.map((member) => (
+          <a href={`/members/${member.id.replace(/\.md$/, '')}`} class="block bg-white rounded-lg border border-border hover:shadow-lg transition-shadow overflow-hidden">
+            <div class="h-[120px] flex items-center justify-center p-4 bg-white">
+              {member.data.logo ? (
+                <img
+                  src={member.data.logo}
+                  alt={member.data.name}
+                  class="max-h-full max-w-full object-contain"
+                />
+              ) : (
+                <div class="text-[18px] font-bold text-primary">{member.data.name}</div>
+              )}
+            </div>
+            <div class="p-4 text-center border-t border-border">
+              <h4 class="font-bold text-text text-[18px]">{member.data.name}</h4>
+              {member.data.email && (
+                <p class="mt-1 text-[14px] text-text-light">{member.data.email}</p>
+              )}
+            </div>
+          </a>
         ))}
       </div>
 
       <div class="mt-8 text-center">
-        <a href="/members" class="text-primary hover:text-primary-hover font-medium">
-          View all member details &rarr;
+        <a href="/members" class="inline-block border border-primary text-primary hover:bg-primary hover:text-white px-5 py-2 font-medium transition-colors">
+          View all members
         </a>
       </div>
     </div>
   </section>
 
-  <!-- What is FHIR -->
-  <section class="py-16">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-text">What is FHIR?</h2>
-      <p class="mt-4 text-lg text-text-light max-w-3xl">
-        FHIR (Fast Healthcare Interoperability Resources) is a data standard that allows better access to health information. It's the modern foundation for healthcare data exchange.
+  <!-- FHIR Section -->
+  <section class="fhir-section-bg relative min-h-[400px] flex items-center bg-cover bg-center bg-no-repeat">
+    <div class="absolute inset-0 bg-black/50"></div>
+    <div class="relative w-full max-w-[1200px] mx-auto px-5 py-16">
+      <h2 class="fhir-section-heading font-bold">
+        Creating open and connected healthcare systems through FHIR
+      </h2>
+      <p class="fhir-section-text mt-6">
+        Fast Healthcare Interoperability Resources (FHIR) is a data standard that allows better access to health information for patients, healthcare providers, researchers and app developers.
       </p>
-      <a href="/why-fhir" class="inline-block mt-4 text-primary hover:text-primary-hover font-medium">
-        Learn why FHIR matters &rarr;
-      </a>
-    </div>
-  </section>
-
-  <!-- Membership Benefits -->
-  <section class="py-16 bg-surface">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-text text-center">Membership Benefits</h2>
-      <p class="mt-4 text-lg text-text-light text-center max-w-2xl mx-auto">
-        Join the alliance and accelerate your FHIR initiatives.
-      </p>
-
-      <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {benefits.map((benefit) => (
-          <div class="bg-white p-6 rounded-lg border border-border">
-            <h3 class="text-lg font-semibold text-text">{benefit.title}</h3>
-            <p class="mt-2 text-text-light">{benefit.description}</p>
-          </div>
-        ))}
-      </div>
-
-      <div class="mt-12 text-center">
+      <div class="mt-8 text-center">
         <a
-          href="/contact"
-          class="bg-primary hover:bg-primary-hover text-white px-8 py-3 rounded font-medium transition-colors"
+          href="/why-fhir"
+          class="inline-block border border-white text-white hover:bg-white hover:text-gray-900 px-5 py-2 font-medium transition-colors"
         >
-          Become a Member
+          Find out what the big deal is about FHIR here
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Contact CTA -->
-  <section class="py-20">
-    <div class="max-w-6xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold text-text">Ready to Join?</h2>
-      <p class="mt-4 text-lg text-text-light">
-        Connect with us to learn more about membership opportunities.
-      </p>
-      <a
-        href="/contact"
-        class="inline-block mt-8 bg-primary hover:bg-primary-hover text-white px-8 py-3 rounded font-medium transition-colors"
-      >
-        Contact Us
-      </a>
+  <!-- Become a Member -->
+  <section class="bg-black py-10">
+    <div class="max-w-[1200px] mx-auto px-5">
+      <div class="px-5">
+        <div class="member-section-heading">
+          <h1>Become an early member</h1>
+          <h2>Be part of our evolving journey and get the chance to contribute to the strategy and operation of FHIRBall. Join an industry alliance that can drive real impact on healthcare IT.</h2>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-8 items-start py-4">
+          <div class="flex-1">
+            <h3 class="benefits-heading text-[20px] md:text-[24px] font-bold text-white mb-4">Benefits</h3>
+            <ol class="benefits-list list-decimal pl-[25px] space-y-2 text-[16px] text-white">
+              <li>Leave your mark on the healthcare industry</li>
+              <li>Join a community of FHIR experts</li>
+              <li>List your business in our member's directory</li>
+              <li>Collaborative participation in key industry events</li>
+              <li>Amplify your online presence via shared marketing channels and initiatives</li>
+              <li>Share in thought leadership alongside other alliance members</li>
+            </ol>
+            <div class="mt-6">
+              <a
+                href="/contact"
+                class="inline-block border border-white text-white hover:bg-primary hover:border-primary px-5 py-3 font-semibold transition-colors"
+              >
+                Become A Member
+              </a>
+            </div>
+          </div>
+          <div class="flex-1 hidden md:block">
+            <img
+              src="/images/backgrounds/become-member.jpg"
+              alt="Team collaboration"
+              class="w-full h-auto"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-10">
+    <div class="max-w-[1200px] mx-auto px-5">
+      <div class="bg-white rounded-2xl p-6 md:p-8">
+        <h2 class="contact-heading font-bold text-text">
+          Do you have any questions about FHIRBall?
+        </h2>
+        <p class="contact-text mt-4 text-text-light">
+          Get in touch to learn how you can help create a better, interoperable future for healthcare.
+        </p>
+
+        <form name="contact" method="POST" data-netlify="true" class="mt-6 space-y-4">
+          <input type="hidden" name="form-name" value="contact" />
+          <div>
+            <input
+              type="email"
+              name="email"
+              placeholder="Email Address"
+              required
+              class="contact-form-input"
+            />
+          </div>
+          <div class="contact-name-grid">
+            <input
+              type="text"
+              name="firstName"
+              placeholder="First Name"
+              class="contact-form-input"
+            />
+            <input
+              type="text"
+              name="lastName"
+              placeholder="Last Name"
+              class="contact-form-input"
+            />
+          </div>
+          <div>
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Phone"
+              class="contact-form-input"
+            />
+          </div>
+          <div>
+            <textarea
+              name="comment"
+              placeholder="Comment"
+              required
+              rows="4"
+              class="contact-form-textarea"
+            ></textarea>
+          </div>
+          <p class="contact-disclaimer text-text-light">
+            <strong>Marketing Permissions</strong><br />
+            The information you provide on this form will only be used to respond to your inquiry. Your privacy is important to us. By clicking below to submit this form, you acknowledge that the information you provide will be processed in accordance with our Privacy Policy.
+          </p>
+          <button
+            type="submit"
+            class="contact-submit bg-text hover:bg-gray-700 text-white font-medium transition-colors"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Cards -->
+  <section class="py-10">
+    <div class="max-w-[1200px] mx-auto px-5">
+      <div class="grid md:grid-cols-3 gap-5">
+        <a href="/resources" class="group relative h-[200px] rounded-2xl overflow-hidden bg-gray-800">
+          <div class="cta-bg-collaboration absolute inset-0 bg-cover bg-center filter blur-[1px] grayscale group-hover:blur-[2px] transition-all"></div>
+          <div class="absolute inset-0 bg-black/40"></div>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <h2 class="cta-card-heading font-bold text-white text-center">
+              FHIR<br />Expertise
+            </h2>
+          </div>
+        </a>
+        <a href="/members" class="group relative h-[200px] rounded-2xl overflow-hidden bg-gray-800">
+          <div class="cta-bg-member absolute inset-0 bg-cover bg-center filter blur-[1px] grayscale group-hover:blur-[2px] transition-all"></div>
+          <div class="absolute inset-0 bg-black/40"></div>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <h2 class="cta-card-heading font-bold text-white text-center">
+              Find FHIR<br />Professionals
+            </h2>
+          </div>
+        </a>
+        <a href="/contact" class="group relative h-[200px] rounded-2xl overflow-hidden bg-gray-800">
+          <div class="cta-bg-fhir absolute inset-0 bg-cover bg-center filter blur-[1px] grayscale group-hover:blur-[2px] transition-all"></div>
+          <div class="absolute inset-0 bg-black/40"></div>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <h2 class="cta-card-heading font-bold text-white text-center">
+              Benefits of<br />Membership
+            </h2>
+          </div>
+        </a>
+      </div>
     </div>
   </section>
 </BaseLayout>

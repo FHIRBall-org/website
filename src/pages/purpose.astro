@@ -3,10 +3,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Purpose" description="Learn about the FHIRBall Alliance mission">
-  <div class="max-w-3xl mx-auto px-4 py-12">
-    <h1 class="text-4xl font-bold text-text">Our Purpose</h1>
+  <!-- Hero Section -->
+  <section class="hero-bg-healthcare relative py-20 bg-cover bg-center bg-no-repeat">
+    <div class="absolute inset-0 bg-primary/80"></div>
+    <div class="relative max-w-6xl mx-auto px-4 text-center">
+      <h1 class="text-5xl font-bold text-white">Our Purpose</h1>
+      <p class="mt-6 text-xl text-white/90 max-w-2xl mx-auto">
+        Uniting to advance healthcare interoperability through FHIR
+      </p>
+    </div>
+  </section>
 
-    <div class="mt-8 prose prose-lg max-w-none">
+  <div class="max-w-3xl mx-auto px-4 py-12">
+    <div class="prose prose-lg max-w-none">
       <p class="text-lg text-text-light">
         The FHIRBall Alliance is a group of companies that have joined forces to promote and market their FHIR-based tools and solutions.
       </p>
@@ -30,4 +39,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </ul>
     </div>
   </div>
+
+  <!-- CTA Section -->
+  <section class="cta-bg-collaboration relative py-24 bg-cover bg-center bg-no-repeat">
+    <div class="absolute inset-0 bg-text/70"></div>
+    <div class="relative max-w-6xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold text-white">Do you want to drive the future of healthcare?</h2>
+      <p class="mt-4 text-lg text-white/90">
+        Join the FHIRBall Alliance and be part of the transformation.
+      </p>
+      <a
+        href="/contact"
+        class="inline-block mt-8 bg-primary hover:bg-primary-hover text-white px-8 py-3 rounded font-medium transition-colors"
+      >
+        Become a Member
+      </a>
+    </div>
+  </section>
 </BaseLayout>

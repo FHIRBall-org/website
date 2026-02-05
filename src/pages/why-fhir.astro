@@ -3,10 +3,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Why FHIR" description="Understanding FHIR and its benefits for healthcare">
-  <div class="max-w-3xl mx-auto px-4 py-12">
-    <h1 class="text-4xl font-bold text-text">Why FHIR?</h1>
+  <!-- Hero Section -->
+  <section class="hero-bg-healthcare relative py-20 bg-cover bg-center bg-no-repeat">
+    <div class="absolute inset-0 bg-primary/80"></div>
+    <div class="relative max-w-6xl mx-auto px-4 text-center">
+      <h1 class="text-5xl font-bold text-white">Why FHIR?</h1>
+      <p class="mt-6 text-xl text-white/90 max-w-2xl mx-auto">
+        The modern standard for healthcare data exchange
+      </p>
+    </div>
+  </section>
 
-    <div class="mt-8 prose prose-lg max-w-none">
+  <div class="max-w-3xl mx-auto px-4 py-12">
+    <div class="prose prose-lg max-w-none">
       <p class="text-lg text-text-light">
         FHIR (Fast Healthcare Interoperability Resources) is a data standard that allows better access to health information.
       </p>
@@ -31,4 +40,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </p>
     </div>
   </div>
+
+  <!-- CTA Section -->
+  <section class="cta-bg-collaboration relative py-24 bg-cover bg-center bg-no-repeat">
+    <div class="absolute inset-0 bg-text/70"></div>
+    <div class="relative max-w-6xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold text-white">Ready to Adopt FHIR?</h2>
+      <p class="mt-4 text-lg text-white/90">
+        Our members can help you implement FHIR solutions.
+      </p>
+      <a
+        href="/members"
+        class="inline-block mt-8 bg-primary hover:bg-primary-hover text-white px-8 py-3 rounded font-medium transition-colors"
+      >
+        Explore Our Members
+      </a>
+    </div>
+  </section>
 </BaseLayout>

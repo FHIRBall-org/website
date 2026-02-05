@@ -6,8 +6,330 @@
   --color-text: #333333;
   --color-text-light: #666666;
   --color-background: #ffffff;
-  --color-surface: #f9f9f9;
+  --color-surface: #f5f5f5;
   --color-border: #e0e0e0;
 
   --font-family-sans: 'Montserrat', system-ui, sans-serif;
+}
+
+/* Base typography matching original site */
+body {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+h1 {
+  font-size: 38px;
+  line-height: 44px;
+  font-weight: 700;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 32px;
+  line-height: 36px;
+  font-weight: 700;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 700;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+h4 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+/* Base typography responsive */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  h2 {
+    font-size: 26px;
+    line-height: 32px;
+  }
+
+  h3 {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  h4 {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+/* Container max-width */
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Hero Section */
+.hero-bg {
+  background-image: url('/images/backgrounds/hero-fhirball.png');
+}
+
+.hero-bg-healthcare {
+  background-image: url('/images/backgrounds/hero-healthcare.jpg');
+}
+
+/* Page CTA Sections */
+.cta-bg-group {
+  background-image: url('/images/backgrounds/cta-group.jpg');
+}
+
+/* Search Page */
+.search-heading {
+  line-height: 1.2;
+}
+
+.hero-heading {
+  line-height: 1.1;
+}
+
+.hero-subheading {
+  line-height: 1.4;
+}
+
+/* Section Headings */
+.section-heading-tight {
+  line-height: 1.2;
+}
+
+.section-heading-normal {
+  line-height: 36px;
+}
+
+/* FHIR Section */
+.fhir-section-bg {
+  background-image: url('/images/backgrounds/fhir-connected-systems.jpg');
+}
+
+.fhir-section-heading {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 42px;
+  line-height: 52px;
+  color: white;
+  margin: 0;
+}
+
+.fhir-section-text {
+  text-align: center;
+  font-size: 18px;
+  line-height: 32px;
+  color: white;
+}
+
+@media (max-width: 991px) {
+  .fhir-section-heading {
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .fhir-section-text {
+    font-size: 16px;
+    line-height: 30px;
+  }
+}
+
+@media (max-width: 479px) {
+  .fhir-section-heading {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .fhir-section-text {
+    font-size: 16px;
+    line-height: 25px;
+  }
+}
+
+/* Become a Member section */
+.member-section-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+}
+
+.member-section-heading h1 {
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: white;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.member-section-heading h2 {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 28px;
+  color: white;
+  margin: 1rem 0 0 0;
+}
+
+.benefits-heading {
+  line-height: 30px;
+}
+
+.benefits-list {
+  line-height: 26px;
+}
+
+/* CTA Cards */
+.cta-card-heading {
+  font-size: 24px;
+  line-height: 1.3;
+}
+
+@media (max-width: 479px) {
+  .cta-card-heading {
+    font-size: 20px;
+  }
+}
+
+.cta-bg-collaboration {
+  background-image: url('/images/backgrounds/cta-collaboration.jpg');
+}
+
+.cta-bg-member {
+  background-image: url('/images/backgrounds/become-member.jpg');
+}
+
+.cta-bg-fhir {
+  background-image: url('/images/backgrounds/fhir-section.jpg');
+}
+
+/* Contact Section */
+.contact-heading {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 40px;
+  line-height: 40px;
+}
+
+.contact-text {
+  text-align: center;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.contact-form-input {
+  width: 100%;
+  height: 50px;
+  padding: 0 25px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.contact-form-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.contact-form-input::placeholder {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.contact-form-textarea {
+  width: 100%;
+  min-height: 150px;
+  padding: 20px 25px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  resize: vertical;
+}
+
+.contact-form-textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.contact-form-textarea::placeholder {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.contact-disclaimer {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.contact-submit {
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.contact-name-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 479px) {
+  .contact-name-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .contact-heading {
+    font-size: 30px;
+    line-height: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .member-section-heading h1 {
+    font-size: 40px;
+  }
+
+  .member-section-heading h2 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+@media (max-width: 479px) {
+  .contact-heading {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  .contact-text {
+    font-size: 14px;
+    line-height: 20px;
+  }
 }
