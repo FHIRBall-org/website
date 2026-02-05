@@ -2,12 +2,12 @@
 interface Props {
   name: string;
   logo?: string;
-  website: string;
+  slug: string;
   description: string;
   content?: string;
 }
 
-const { name, logo, website, description, content } = Astro.props;
+const { name, logo, slug, description, content } = Astro.props;
 ---
 
 <article class="bg-white border border-border rounded-lg p-6 hover:shadow-md transition-shadow">
@@ -24,7 +24,9 @@ const { name, logo, website, description, content } = Astro.props;
       </div>
     )}
     <div class="flex-1">
-      <h3 class="text-lg font-semibold text-text">{name}</h3>
+      <a href={`/members/${slug}`} class="hover:text-primary transition-colors">
+        <h3 class="text-lg font-semibold text-text">{name}</h3>
+      </a>
       <p class="mt-1 text-sm text-text-light">{description}</p>
       {content && (
         <div class="mt-3 text-sm text-text-light prose prose-sm">
@@ -32,12 +34,10 @@ const { name, logo, website, description, content } = Astro.props;
         </div>
       )}
       <a
-        href={website}
-        target="_blank"
-        rel="noopener noreferrer"
+        href={`/members/${slug}`}
         class="inline-block mt-3 text-sm text-primary hover:text-primary-hover font-medium"
       >
-        Visit Website &rarr;
+        View Profile &rarr;
       </a>
     </div>
   </div>

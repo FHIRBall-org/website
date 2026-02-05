@@ -27,3 +27,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+
+# Downloaded reference files
+cdn.prod.website-files.com/
+www.fhirball.org/
+*.wf-app-prod.cosmic.webflow.services/

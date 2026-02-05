@@ -3,37 +3,47 @@ const navLinks = [
   { href: '/purpose', label: 'Purpose' },
   { href: '/why-fhir', label: 'Why FHIR' },
   { href: '/members', label: 'Our Members' },
-  { href: '/articles', label: 'Articles' },
+  { href: '/resources', label: 'Resources' },
   { href: '/events', label: 'Industry Events' },
 ];
 
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="bg-white border-b border-border">
-  <nav class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-    <a href="/" class="flex items-center">
-      <img src="/images/logo.png" alt="FHIRBall" class="h-10" />
-    </a>
+<header class="sticky top-0 z-[1000] bg-white border-b border-[#dcdcdc] px-[10px]">
+  <nav class="max-w-[1200px] mx-auto py-[15px] flex items-center justify-between">
+    <div class="flex items-center">
+      <a href="/" class="flex items-center">
+        <img src="/images/logo.png" alt="FHIRBall" class="h-10" />
+      </a>
 
-    <!-- Desktop nav -->
-    <div class="hidden md:flex items-center gap-6">
-      {navLinks.map(link => (
-        <a
-          href={link.href}
-          class:list={[
-            'text-sm font-medium transition-colors',
-            currentPath === link.href ? 'text-primary' : 'text-text hover:text-primary'
-          ]}
-        >
-          {link.label}
-        </a>
-      ))}
+      <!-- Desktop nav -->
+      <div class="hidden md:flex items-center ml-8">
+        {navLinks.map(link => (
+          <a
+            href={link.href}
+            class:list={[
+              'uppercase text-[14px] font-semibold leading-[20px] px-[10px] py-[20px] transition-colors',
+              currentPath === link.href
+                ? 'text-primary border-b border-primary'
+                : 'text-text hover:text-[#ffdead]'
+            ]}
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <div class="hidden md:flex items-center gap-5">
       <a
-        href="/contact"
-        class="bg-primary hover:bg-primary-hover text-white px-4 py-2 rounded text-sm font-medium transition-colors"
+        href="/#contact"
+        class="uppercase text-[14px] font-semibold border border-black bg-white text-black px-[10px] py-[10px] transition-all hover:border-primary hover:bg-primary hover:text-white hover:-translate-y-[3px]"
       >
         Contact Now
+      </a>
+      <a href="/search" class="block">
+        <img src="/images/icons/search.svg" alt="Search" class="w-5 h-5" />
       </a>
     </div>
 
@@ -56,7 +66,7 @@ const currentPath = Astro.url.pathname;
         <a
           href={link.href}
           class:list={[
-            'block text-sm font-medium',
+            'block uppercase text-[14px] font-semibold',
             currentPath === link.href ? 'text-primary' : 'text-text'
           ]}
         >
@@ -64,20 +74,26 @@ const currentPath = Astro.url.pathname;
         </a>
       ))}
       <a
-        href="/contact"
-        class="block bg-primary text-white px-4 py-2 rounded text-sm font-medium text-center"
+        href="/#contact"
+        class="block uppercase text-[14px] font-semibold border border-black text-black px-[10px] py-[10px] text-center mt-4"
       >
         Contact Now
+      </a>
+      <a
+        href="/search"
+        class="block uppercase text-[14px] font-semibold text-text mt-2"
+      >
+        Search
       </a>
     </div>
   </div>
 </header>
 
 <script>
-  const btn = document.getElementById('mobile-menu-btn');
-  const menu = document.getElementById('mobile-menu');
+  const mobileBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
 
-  btn?.addEventListener('click', () => {
-    menu?.classList.toggle('hidden');
+  mobileBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
   });
 </script>

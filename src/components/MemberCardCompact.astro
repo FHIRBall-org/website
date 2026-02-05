@@ -2,16 +2,14 @@
 interface Props {
   name: string;
   logo?: string;
-  website: string;
+  slug: string;
 }
 
-const { name, logo, website } = Astro.props;
+const { name, logo, slug } = Astro.props;
 ---
 
 <a
-  href={website}
-  target="_blank"
-  rel="noopener noreferrer"
+  href={`/members/${slug}`}
   class="block bg-white border border-border rounded-lg p-4 hover:shadow-md hover:border-primary transition-all text-center group"
 >
   {logo ? (

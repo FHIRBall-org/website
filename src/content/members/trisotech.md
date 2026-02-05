@@ -1,0 +1,42 @@
+---
+name: "Trisotech"
+logo: "/images/members/trisotech.png"
+website: "https://www.trisotech.com/"
+description: "Trisotech provides a platform enabling healthcare organizations to explicitly define, govern, and execute clinical and administrative logic through standards-based models."
+category: "founding"
+location: "Canada"
+phone: "1-877-374-3995"
+contactName: "Denis Gagné"
+email: "support@Trisotech.com"
+facebook: "https://www.facebook.com/trisotech"
+linkedin: "https://www.linkedin.com/company/trisotech"
+twitter: "https://twitter.com/trisotech"
+youtube: "https://www.youtube.com/user/trisotech"
+serviceAreas:
+  - "Global"
+services:
+  - "Software Vendor"
+  - "Managed Services"
+  - "Software as a Service (SaaS)"
+  - "FHIR Orchestration"
+  - "CPG Automation"
+  - "Workflow and Decision Automation"
+industries:
+  - "Hospitals / Hospital Systems / Providers"
+  - "Health Insurance / Payers"
+  - "Specialty Healthcare Providers"
+  - "Ambulatory Services / Primary Care"
+  - "Residential Care"
+  - "Pharmaceutical"
+  - "Research Institutions"
+  - "Government Administration"
+  - "Certification Bodies"
+  - "Medical Devices / Equipment / IoT"
+  - "Health IT Vendors"
+  - "General Practices"
+  - "Community Care"
+  - "Social Care"
+  - "Digital Health"
+---
+
+Trisotech provides a platform enabling healthcare organizations to explicitly define, govern, and execute clinical and administrative logic through standards-based models, integrating FHIR and supporting interoperable healthcare automation with end-to-end traceability across EHR environments.

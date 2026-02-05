@@ -8,6 +8,17 @@ const members = defineCollection({
     website: z.string().url(),
     description: z.string(),
     category: z.enum(['founding', 'member']).default('member'),
+    location: z.string().optional(),
+    phone: z.string().optional(),
+    contactName: z.string().optional(),
+    email: z.string().optional(),
+    linkedin: z.string().optional(),
+    twitter: z.string().optional(),
+    facebook: z.string().optional(),
+    youtube: z.string().optional(),
+    serviceAreas: z.array(z.string()).default([]),
+    services: z.array(z.string()).default([]),
+    industries: z.array(z.string()).default([]),
   }),
 });
 
