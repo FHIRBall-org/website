@@ -32,3 +32,8 @@ pnpm-debug.log*
 cdn.prod.website-files.com/
 www.fhirball.org/
 *.wf-app-prod.cosmic.webflow.services/
+
+# Test artifacts
+test-results/
+playwright-report/
+.playwright/
