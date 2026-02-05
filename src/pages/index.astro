@@ -167,8 +167,11 @@ const featuredMembers = sortedMembers.slice(0, 4);
           Get in touch to learn how you can help create a better, interoperable future for healthcare.
         </p>
 
-        <form name="contact" method="POST" data-netlify="true" action="/thank-you" class="mt-6 space-y-4">
+        <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/thank-you" class="mt-6 space-y-4">
           <input type="hidden" name="form-name" value="contact" />
+          <p class="hidden">
+            <label>Don't fill this out: <input name="bot-field" /></label>
+          </p>
           <div>
             <input
               type="email"
