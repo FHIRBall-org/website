@@ -6,8 +6,7 @@ const members = await getCollection('members');
 const sortedMembers = members.sort((a, b) =>
   a.data.name.localeCompare(b.data.name)
 );
-// Show only first 4 members on homepage
-const featuredMembers = sortedMembers.slice(0, 4);
+// Show all members on homepage
 ---
 
 <BaseLayout title="FHIRBall - The FHIR Business Alliance">
@@ -63,7 +62,7 @@ const featuredMembers = sortedMembers.slice(0, 4);
       </h2>
 
       <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        {featuredMembers.map((member) => (
+        {sortedMembers.map((member) => (
           <a href={`/members/${member.id.replace(/\.md$/, '')}`} class="block bg-white rounded-lg border border-border hover:shadow-lg transition-shadow overflow-hidden">
             <div class="h-[120px] flex items-center justify-center p-4 bg-white">
               {member.data.logo ? (
