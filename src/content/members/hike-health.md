@@ -26,4 +26,4 @@ industries:
   - "Research Institutions"
 ---
 
-HIKE HEALTH is a vendor-agnostic system integrator specializing in FHIR & IHE-based healthcare interoperability, assisting organizations with regulatory compliance, data migrations, and clinical data optimization across healthcare sectors.
+HIKE HEALTH® is a vendor-agnostic system integrator specializing in FHIR & IHE-based healthcare interoperability. We help Payers, Providers, HIEs, and Public Health Agencies meet CMS-9115-F and CMS-0057-F requirements, manage complex data migrations, and optimize clinical data exchange. Our team bridges vendor gaps with standards-based solutions, offering project management, custom applications, privacy/security compliance, and end-to-end solution outsourcing.

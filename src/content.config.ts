@@ -16,9 +16,14 @@ const members = defineCollection({
     twitter: z.string().optional(),
     facebook: z.string().optional(),
     youtube: z.string().optional(),
+    certifications: z.array(z.string()).default([]),
     serviceAreas: z.array(z.string()).default([]),
     services: z.array(z.string()).default([]),
     industries: z.array(z.string()).default([]),
+    memberArticles: z.array(z.object({
+      title: z.string(),
+      url: z.string().url(),
+    })).default([]),
   }),
 });
 

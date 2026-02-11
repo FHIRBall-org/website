@@ -33,6 +33,8 @@ industries:
   - "Public Health & Government Programs"
 ---
 
-Firely is a global digital healthcare company providing software, training, and consultancy to bring FHIR to life. The organization helped establish the HL7 FHIR standard and continues supporting its advancement. Their 100% FHIR-based solutions serve governments, hospitals, payers, and health IT companies worldwide.
+Firely is a global digital healthcare company providing software, training, and consultancy to bring FHIR to life. As one of the initiators of the HL7 FHIR standard, Firely has helped shape its evolution from the very beginning.
 
-Firely is a founding member of the FHIR Business Alliance and co-organizes HL7 FHIR DevDays.
+Firely's 100% FHIR-based solutions support both compliance and innovation, from scalable FHIR server infrastructure to data modeling and the foundations required to build and operate FHIR-based systems, including the official open-source .NET SDK for HL7 FHIR. Governments, hospitals, payers, and health IT companies worldwide rely on Firely to build and scale their FHIR capabilities.
+
+Firely is a founding member of the FHIR Business Alliance and, together with HL7 International, organizes HL7 FHIR DevDays, the world's leading FHIR event.

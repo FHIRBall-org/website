@@ -13,67 +13,69 @@
 }
 
 /* Base typography matching original site */
-body {
-  font-size: 14px;
-  line-height: 20px;
-}
+@layer base {
+  body {
+    font-size: 14px;
+    line-height: 20px;
+  }
 
-h1 {
-  font-size: 38px;
-  line-height: 44px;
-  font-weight: 700;
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-
-h2 {
-  font-size: 32px;
-  line-height: 36px;
-  font-weight: 700;
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-
-h3 {
-  font-size: 24px;
-  line-height: 30px;
-  font-weight: 700;
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-
-h4 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: 700;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-p {
-  margin-bottom: 10px;
-}
-
-/* Base typography responsive */
-@media (max-width: 768px) {
   h1 {
-    font-size: 30px;
-    line-height: 36px;
+    font-size: 38px;
+    line-height: 44px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 10px;
   }
 
   h2 {
-    font-size: 26px;
-    line-height: 32px;
+    font-size: 32px;
+    line-height: 36px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 10px;
   }
 
   h3 {
-    font-size: 20px;
-    line-height: 26px;
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 10px;
   }
 
   h4 {
-    font-size: 16px;
-    line-height: 22px;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin-bottom: 10px;
+  }
+
+  /* Base typography responsive */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 30px;
+      line-height: 36px;
+    }
+
+    h2 {
+      font-size: 26px;
+      line-height: 32px;
+    }
+
+    h3 {
+      font-size: 20px;
+      line-height: 26px;
+    }
+
+    h4 {
+      font-size: 16px;
+      line-height: 22px;
+    }
   }
 }
 
@@ -301,6 +303,11 @@ p {
   .contact-name-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* Member Detail - scoped styles for markdown Content rendering */
+.member-bio p {
+  margin-bottom: 10px;
 }
 
 /* Responsive adjustments */

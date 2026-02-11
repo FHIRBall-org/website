@@ -26,4 +26,6 @@ industries:
   - "Health IT Vendors"
 ---
 
-Beda Software comprises a well-played team of passionate health IT experts focused on creating interoperable healthcare solutions. The organization emphasizes using FHIR-native approaches and developing open-source FHIR tools to advance "Healthcare 3.0" through data standardization across the ecosystem.
+Beda Software is a well-played team of passionate health IT experts helping Health Tech and Digital health companies develop and launch interoperable solutions. We are bringing a state of Healthcare 3.0 closer by connecting all touchpoints across the healthcare ecosystem with innovative digital software products.
+
+We believe, that standardizing healthcare data is key to success. That's why we utilize the FHIRnative approach for every solution we work on. Beda Software wishes more companies and products to be able to easily apply this approach; that's why we create and maintain various open-source FHIR development tools.

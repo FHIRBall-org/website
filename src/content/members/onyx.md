@@ -11,6 +11,9 @@ email: "Mark.Scrimshire@onyxhealth.io"
 linkedin: "https://www.linkedin.com/company/43215528/"
 twitter: "https://twitter.com/onyxhealth_tech"
 youtube: "https://www.youtube.com/@onyxhealth/featured"
+certifications:
+  - "SOC 2"
+  - "Drummond Certification - Provider Directory / Formulary"
 serviceAreas:
   - "Global"
 services:
@@ -25,6 +28,4 @@ industries:
   - "Medical Devices / Equipment / IoT"
 ---
 
-Onyx provides services to make the implementation and operation of FHIR-based interoperability solutions easy and operates OnyxOS, the Operating System for Healthcare accelerating interoperability. The organization supports HL7 Da Vinci, CARIN Alliance, Gravity, and Helios accelerators.
-
-Certifications: SOC 2, Drummond Certification (Provider Directory/Formulary)
+Onyx provides services to make the implementation and operation of FHIR-based interoperability solutions easy for our clients. OnyxOS is the Operating System for Healthcare that accelerates Interoperability. Onyx is deeply committed to promoting the advancement of the FHIR Specification through our support of the HL7 Da Vinci, CARIN Alliance, Gravity, and Helios accelerators.

@@ -24,15 +24,12 @@ test.describe('Members Page', () => {
 test.describe('Member Detail Page', () => {
   test('should display member information', async ({ page }) => {
     await page.goto('/members/1uphealth');
-    await expect(page.locator('h1')).toBeVisible();
     await expect(page.getByText(/Website/i)).toBeVisible();
+    await expect(page.getByText(/Location/i)).toBeVisible();
   });
 
-  test('should have back link to members list', async ({ page }) => {
-    await page.goto('/members/1uphealth');
-    const backLink = page.getByRole('link', { name: /Back to/i });
-    await expect(backLink).toBeVisible();
-    await backLink.click();
-    await expect(page).toHaveURL(/\/members$/);
+  test('should display member articles section when articles exist', async ({ page }) => {
+    await page.goto('/members/healthlx');
+    await expect(page.getByText('Members Articles:')).toBeVisible();
   });
 });

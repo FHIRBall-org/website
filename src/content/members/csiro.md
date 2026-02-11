@@ -30,10 +30,11 @@ industries:
   - "Government Administration"
   - "Medical Devices / Equipment / IoT"
   - "Health IT Vendors"
+memberArticles:
+  - title: "Ontoserver"
+    url: "https://ontoserver.csiro.au/"
+  - title: "The Australian e-Health Research Centre (AEHRC)"
+    url: "https://aehrc.com/"
 ---
 
-CSIRO (Commonwealth Scientific and Industrial Research Organisation) is Australia's national science agency and innovation catalyst, focused on boosting innovation performance. The Australian e-Health Research Centre (AEHRC) serves as the Digital Health Program, functioning as a leading research facility applying technology to enhance health services and clinical treatments for Australians.
-
-AEHRC has delivered terminology solutions to governments, healthcare organizations, and software vendors for over a decade.
-
-Notable Offerings: Ontoserver, Australian e-Health Research Centre
+CSIRO is Australia's national science agency and innovation catalyst, collaborating to boost Australia's innovation performance. The Australian e-Health Research Centre (AEHRC), is the Digital Health Program for CSIRO and is the leading national research facility applying information and communication technology to improve health services and clinical treatment for Australians. AEHRC has been delivering terminology solutions to governments, health care organisations and software vendors for over 10 years.

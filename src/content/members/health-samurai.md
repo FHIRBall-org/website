@@ -25,8 +25,15 @@ industries:
   - "App Developers"
   - "Providers"
   - "Payers"
+memberArticles:
+  - title: "The FHIR Guide for CTOs and Technical Leaders"
+    url: "https://www.health-samurai.io/articles/the-fhir-guide-for-ctos-and-technical-leaders"
+  - title: "A Quick Guide to Telemedicine Software Alternatives for Medical Providers"
+    url: "https://www.health-samurai.io/articles/a-quick-guide-to-telemedicine-software-alternatives-for-medical-providers"
+  - title: "Narushealth"
+    url: "https://www.health-samurai.io/case-study/narushealth"
 ---
 
-Health Samurai aims to revolutionize care delivery through quality software and an open, connected healthcare ecosystem. The organization has championed FHIR since its inception and developed the Aidbox platform in 2015, combining FHIR with engineering excellence.
+At Health Samurai, we want to transform care delivery with great software. We believe that an open, connected healthcare application ecosystem will drive higher quality care and lower costs. To help make this happen, we have a simple plan: give people the tools they need to build life-changing technologies and handle healthcare data the right way. We believe that when you empower people with the right data and tools, amazing things happen.
 
-This platform powers numerous cloud-based EHR systems, telemedicine solutions, care coordination platforms, patient applications, and analytics products.
+We have been a part of the FHIR movement since its early days and interpreted FHIR as a framework for the development of high-quality open systems for healthcare. In 2015 we started building the Aidbox platform to put together and re-use FHIR and our best engineering ideas. Aidbox saves years of work and improves quality. Nowadays, Aidbox powers a few dozens of cloud EHR systems, telemedicine platforms, care coordination solutions, patient-facing mobile applications, data analytics products, and more.
