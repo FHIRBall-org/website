@@ -34,7 +34,7 @@ test.describe('Article Detail Page', () => {
   test('should display article content', async ({ page }) => {
     await page.goto('/resources/fhirball-focused-on-business-use-cases');
     await expect(page.locator('h1')).toContainText('Business Use Cases');
-    await expect(page.getByText('Duncan Weatherston')).toBeVisible();
+    await expect(page.getByText('By Duncan Weatherston')).toBeVisible();
   });
 
   test('should display related posts', async ({ page }) => {
