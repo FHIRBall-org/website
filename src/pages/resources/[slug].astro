@@ -1,0 +1,73 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+
+export async function getStaticPaths() {
+  const articles = await getCollection('articles');
+  return articles.map((article) => ({
+    params: { slug: article.id.replace(/\.md$/, '') },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props;
+const { Content } = await article.render();
+
+const allArticles = await getCollection('articles');
+const relatedPosts = allArticles
+  .filter(a => a.id !== article.id)
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
+  .slice(0, 3);
+---
+
+<BaseLayout title={article.data.title} description={article.data.description}>
+  <!-- Hero Banner -->
+  <section class="bg-[#333] py-16 px-[10px]">
+    <div class="max-w-[1200px] mx-auto text-center">
+      <h1 class="text-[30px] md:text-[38px] font-bold text-white leading-tight">
+        {article.data.title}
+      </h1>
+      {article.data.author && (
+        <p class="mt-4 text-[16px] text-white/80">By {article.data.author}</p>
+      )}
+    </div>
+  </section>
+
+  <!-- Article Body -->
+  <article class="max-w-3xl mx-auto px-[10px] py-12">
+    {article.data.image && (
+      <img src={article.data.image} alt="" class="w-full rounded-lg mb-8" />
+    )}
+    <div class="article-content">
+      <Content />
+    </div>
+
+    <footer class="mt-12 pt-8 border-t border-border">
+      <a href="/resources" class="text-primary hover:text-primary-hover font-medium">
+        &larr; Back to Resources
+      </a>
+    </footer>
+  </article>
+
+  <!-- Related Posts -->
+  {relatedPosts.length > 0 && (
+    <section class="py-10 bg-surface">
+      <div class="max-w-[1200px] mx-auto px-[10px]">
+        <h2 class="text-[24px] font-bold text-text mb-6">Related Posts</h2>
+        <div class="grid md:grid-cols-3 gap-5">
+          {relatedPosts.map((post) => (
+            <ArticleCard
+              title={post.data.title}
+              description={post.data.description}
+              pubDate={post.data.pubDate}
+              author={post.data.author}
+              slug={post.id.replace(/\.md$/, '')}
+              image={post.data.image}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+</BaseLayout>

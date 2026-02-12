@@ -5,15 +5,10 @@ interface Props {
   pubDate: Date;
   slug: string;
   image?: string;
+  author?: string;
 }
 
-const { title, description, pubDate, slug, image } = Astro.props;
-
-const formattedDate = pubDate.toLocaleDateString('en-US', {
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric',
-});
+const { title, description, pubDate, slug, image, author } = Astro.props;
 ---
 
 <article class="bg-white border border-border rounded-lg overflow-hidden hover:shadow-md transition-shadow">
@@ -25,15 +20,17 @@ const formattedDate = pubDate.toLocaleDateString('en-US', {
     />
   )}
   <div class="p-6">
-    <time class="text-sm text-text-light">{formattedDate}</time>
+    {author && (
+      <p class="text-sm text-text-light">{author}</p>
+    )}
     <h2 class="mt-2 text-xl font-semibold text-text">
-      <a href={`/articles/${slug}`} class="hover:text-primary transition-colors">
+      <a href={`/resources/${slug}`} class="hover:text-primary transition-colors">
         {title}
       </a>
     </h2>
     <p class="mt-2 text-text-light">{description}</p>
     <a
-      href={`/articles/${slug}`}
+      href={`/resources/${slug}`}
       class="inline-block mt-4 text-sm text-primary hover:text-primary-hover font-medium"
     >
       Read more &rarr;

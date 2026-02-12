@@ -1,0 +1,69 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+
+const articles = await getCollection('articles');
+const sortedArticles = articles.sort((a, b) =>
+  b.data.pubDate.getTime() - a.data.pubDate.getTime()
+);
+---
+
+<BaseLayout title="Resources" description="News, insights, and updates from the FHIRBall Alliance">
+  <!-- Hero Section -->
+  <section class="hero-bg-healthcare relative py-20 bg-cover bg-center bg-no-repeat">
+    <div class="absolute inset-0 bg-primary/80"></div>
+    <div class="relative max-w-[1200px] mx-auto px-[10px] text-center">
+      <h1 class="text-[40px] md:text-[50px] font-bold text-white uppercase">Resources</h1>
+      <p class="mt-6 text-[18px] md:text-[20px] text-white/90 max-w-2xl mx-auto">
+        The place to find inspiration and keep up to date with everything at FHIRBall.
+      </p>
+    </div>
+  </section>
+
+  <!-- External Resource Links -->
+  <section class="py-8 bg-surface">
+    <div class="max-w-[1200px] mx-auto px-[10px]">
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="https://www.hl7.org/fhir/overview.html" target="_blank" rel="noopener noreferrer"
+           class="inline-block border border-text text-text hover:bg-text hover:text-white px-5 py-2 font-medium transition-colors uppercase text-[14px]">
+          FHIR Standard
+        </a>
+        <a href="https://www.hl7.org/" target="_blank" rel="noopener noreferrer"
+           class="inline-block border border-text text-text hover:bg-text hover:text-white px-5 py-2 font-medium transition-colors uppercase text-[14px]">
+          HL7 International
+        </a>
+        <a href="https://www.himss.org/" target="_blank" rel="noopener noreferrer"
+           class="inline-block border border-text text-text hover:bg-text hover:text-white px-5 py-2 font-medium transition-colors uppercase text-[14px]">
+          HIMSS
+        </a>
+        <a href="https://www.hl7.org/fhir/summary.html" target="_blank" rel="noopener noreferrer"
+           class="inline-block border border-text text-text hover:bg-text hover:text-white px-5 py-2 font-medium transition-colors uppercase text-[14px]">
+          FHIR Cheat Sheet
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Articles Grid -->
+  <section class="py-10">
+    <div class="max-w-[1200px] mx-auto px-[10px]">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {sortedArticles.map((article) => (
+          <ArticleCard
+            title={article.data.title}
+            description={article.data.description}
+            pubDate={article.data.pubDate}
+            author={article.data.author}
+            slug={article.id.replace(/\.md$/, '')}
+            image={article.data.image}
+          />
+        ))}
+      </div>
+
+      {sortedArticles.length === 0 && (
+        <p class="mt-12 text-text-light text-center">No articles yet. Check back soon!</p>
+      )}
+    </div>
+  </section>
+</BaseLayout>

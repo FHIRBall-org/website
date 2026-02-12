@@ -310,6 +310,46 @@
   margin-bottom: 10px;
 }
 
+/* Article Content - scoped styles for markdown Content rendering */
+.article-content p {
+  font-size: 18px;
+  line-height: 28px;
+  margin-bottom: 16px;
+}
+
+.article-content h2 {
+  margin-top: 32px;
+}
+
+.article-content h3 {
+  margin-top: 24px;
+}
+
+.article-content h4 {
+  margin-top: 20px;
+}
+
+.article-content ul,
+.article-content ol {
+  padding-left: 25px;
+  margin-bottom: 16px;
+}
+
+.article-content li {
+  margin-bottom: 8px;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.article-content a {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.article-content a:hover {
+  color: var(--color-primary-hover);
+}
+
 /* Responsive adjustments */
 @media (max-width: 991px) {
   .contact-heading {

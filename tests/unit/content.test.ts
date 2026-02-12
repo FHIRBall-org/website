@@ -31,6 +31,35 @@ describe('Member Content', () => {
   });
 });
 
+const articlesDir = join(process.cwd(), 'src/content/articles');
+
+describe('Article Content', () => {
+  const articleFiles = readdirSync(articlesDir).filter(f => f.endsWith('.md'));
+
+  it('should have at least one article', () => {
+    expect(articleFiles.length).toBeGreaterThan(0);
+  });
+
+  articleFiles.forEach((file) => {
+    describe(`Article: ${file}`, () => {
+      const content = readFileSync(join(articlesDir, file), 'utf-8');
+      const frontmatter = content.split('---')[1];
+
+      it('should have required title field', () => {
+        expect(frontmatter).toMatch(/title:\s*.+/);
+      });
+
+      it('should have required description field', () => {
+        expect(frontmatter).toMatch(/description:\s*.+/);
+      });
+
+      it('should have required pubDate field', () => {
+        expect(frontmatter).toMatch(/pubDate:\s*.+/);
+      });
+    });
+  });
+});
+
 describe('CSS Classes', () => {
   const cssPath = join(process.cwd(), 'src/styles/global.css');
   const cssContent = readFileSync(cssPath, 'utf-8');
