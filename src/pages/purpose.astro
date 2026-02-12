@@ -2,58 +2,88 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Purpose" description="Learn about the FHIRBall Alliance mission">
-  <!-- Hero Section -->
-  <section class="hero-bg-healthcare relative py-20 bg-cover bg-center bg-no-repeat">
-    <div class="absolute inset-0 bg-primary/80"></div>
-    <div class="relative max-w-6xl mx-auto px-4 text-center">
-      <h1 class="text-5xl font-bold text-white">Our Purpose</h1>
-      <p class="mt-6 text-xl text-white/90 max-w-2xl mx-auto">
-        Uniting to advance healthcare interoperability through FHIR
+<BaseLayout title="Our Purpose" description="The FHIR Business Alliance (FHIRBall) is a global partnership co-founded by 1upHealth, AEGIS, Firely, and Smile Digital Health.">
+  <!-- Banner Section -->
+  <section class="hero-bg relative py-20 bg-cover bg-center bg-no-repeat">
+    <div class="max-w-[1200px] mx-auto px-[10px] text-center">
+      <h1 class="text-[40px] md:text-[50px] lg:text-[60px] font-bold text-white uppercase">OUR <strong>PURPOSE</strong></h1>
+    </div>
+  </section>
+
+  <!-- Purpose Intro -->
+  <section class="py-16">
+    <div class="max-w-[1200px] mx-auto px-[10px]">
+      <p class="text-[18px] leading-[28px] text-text">
+        The FHIR Business Alliance (FHIRBall) is a global partnership co-founded by <a href="/members" class="text-primary font-semibold hover:text-primary-hover">1upHealth</a>, <a href="/members" class="text-primary font-semibold hover:text-primary-hover">AEGIS</a>, <a href="/members" class="text-primary font-semibold hover:text-primary-hover">Firely</a>, and <a href="/members" class="text-primary font-semibold hover:text-primary-hover">Smile Digital Health</a>. Our companies have been heavily involved with HL7® FHIR® (Fast Healthcare Interoperability Resources) since its beginning. We all believe FHIR is driving major changes in health IT and, in turn, driving progress in healthcare by enabling true interoperability through standard, safe and efficient APIs. Our purpose as FHIRBall is to expand FHIR knowledge, spread awareness about health interoperability and build more interoperable FHIR solutions around the world.
+      </p>
+      <p class="text-[18px] leading-[28px] text-text mt-4">
+        Together, we join forces to expand the market for FHIR products and services, as well as FHIR-based tools and solutions. Why? Because we believe every patient and healthcare worker deserves the best that technology has to offer. By spreading FHIR, we can enable openness and better collaboration within the healthcare industry.
+      </p>
+      <p class="text-[18px] leading-[28px] text-text mt-4">
+        Through each of our businesses, we strive to propel the healthcare industry forward through the community-based approach of HL7 and the FHIR Foundation.
       </p>
     </div>
   </section>
 
-  <div class="max-w-3xl mx-auto px-4 py-12">
-    <div class="prose prose-lg max-w-none">
-      <p class="text-lg text-text-light">
-        The FHIRBall Alliance is a group of companies that have joined forces to promote and market their FHIR-based tools and solutions.
-      </p>
-
-      <h2>Who We Are</h2>
-      <p>
-        We are an alliance driving FHIR adoption across the healthcare industry. Our members represent leading innovators in healthcare interoperability, united by a shared commitment to better data for better health.
-      </p>
-
-      <h2>Our Mission</h2>
-      <p>
-        To accelerate the adoption of FHIR standards and enable seamless healthcare data exchange that improves patient outcomes and reduces costs.
-      </p>
-
-      <h2>What We Do</h2>
-      <ul>
-        <li>Promote FHIR-based interoperability solutions</li>
-        <li>Collaborate on industry best practices</li>
-        <li>Educate healthcare organizations about FHIR benefits</li>
-        <li>Showcase member solutions at industry events</li>
-      </ul>
+  <!-- Our Values -->
+  <section class="py-16 bg-surface">
+    <div class="max-w-[1200px] mx-auto px-[10px]">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h2 class="text-[32px] font-bold text-text">Our <strong>values</strong></h2>
+          <p class="text-[18px] leading-[28px] text-text-light mt-4">
+            These are our core values, rooted in the principles of the FHIR community
+          </p>
+          <ol class="list-decimal pl-6 mt-6 space-y-4 text-[16px] leading-[24px] text-text">
+            <li>Firstly, we believe healthcare data belongs to the patient or care provider, not the vendor.</li>
+            <li>We put patients &amp; providers first, by creating safe and standardized APIs.</li>
+            <li>We avoid vendor lock-in by using open and standardized APIs to give access to data.</li>
+            <li>We support open standards, open-source and open communities.</li>
+            <li>We actively contribute to the FHIR standard and provide support to the FHIR community, with the intention of increasing healthcare IT standards globally.</li>
+            <li>We put developers first by providing accessible platforms, events, training, and other developer-friendly products to create a developer community focused on FHIR.</li>
+            <li>Lastly, we build interoperable solutions based on open standard FHIR APIs, leading the driving change in healthcare.</li>
+          </ol>
+        </div>
+        <div>
+          <img
+            src="/images/purpose-values.jpg"
+            alt="Team collaboration representing FHIRBall values"
+            class="w-full h-auto rounded object-cover"
+            loading="lazy"
+          />
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 
   <!-- CTA Section -->
   <section class="cta-bg-collaboration relative py-24 bg-cover bg-center bg-no-repeat">
     <div class="absolute inset-0 bg-text/70"></div>
-    <div class="relative max-w-6xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold text-white">Do you want to drive the future of healthcare?</h2>
-      <p class="mt-4 text-lg text-white/90">
-        Join the FHIRBall Alliance and be part of the transformation.
+    <div class="relative max-w-[1200px] mx-auto px-[10px] text-center">
+      <h2 class="text-[28px] md:text-[36px] font-bold text-white">Do you want to drive the future of healthcare?</h2>
+      <p class="mt-4 text-[16px] md:text-[18px] text-white/90 max-w-2xl mx-auto">
+        We are looking for like-minded businesses and individuals who share our core values and our passion for FHIR and interoperability.
       </p>
-      <a
-        href="/contact"
-        class="inline-block mt-8 bg-primary hover:bg-primary-hover text-white px-8 py-3 rounded font-medium transition-colors"
-      >
-        Become a Member
-      </a>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a
+          href="/contact"
+          class="inline-block border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 py-3 font-medium transition-colors"
+        >
+          Become a Member
+        </a>
+        <a
+          href="/members"
+          class="inline-block border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 py-3 font-medium transition-colors"
+        >
+          Find FHIR Professionals
+        </a>
+        <a
+          href="/resources"
+          class="inline-block border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 py-3 font-medium transition-colors"
+        >
+          FHIR Expertise
+        </a>
+      </div>
     </div>
   </section>
 </BaseLayout>

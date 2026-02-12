@@ -39,4 +39,18 @@ const articles = defineCollection({
   }),
 });
 
-export const collections = { members, articles };
+const events = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    image: z.string().optional(),
+    location: z.string().optional(),
+    startDate: z.coerce.date(),
+    endDate: z.coerce.date().optional(),
+    time: z.string().optional(),
+    description: z.string(),
+    externalUrl: z.string().url(),
+  }),
+});
+
+export const collections = { members, articles, events };

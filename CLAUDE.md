@@ -38,6 +38,7 @@ src/
   content/
     members/        # Member markdown files (content collection)
     articles/       # Article markdown files (content collection)
+    events/         # Event markdown files (content collection)
   layouts/          # BaseLayout.astro
   pages/            # File-based routing
     members/[slug]  # Dynamic member detail pages
@@ -47,6 +48,7 @@ src/
 public/
   images/
     members/        # Member logo images
+    events/         # Event images
     backgrounds/    # Background images
   form.html         # Static form for Netlify Forms detection
 ```
@@ -57,6 +59,7 @@ Defined in `src/content.config.ts`:
 
 - **members** — Company profiles with fields: name, logo, website, description, category (founding/member), location, contact info, social links, serviceAreas, services, industries
 - **articles** — Blog posts with fields: title, description, pubDate, author, image, tags
+- **events** — Industry events with fields: title, image, location, startDate, endDate, time, description, externalUrl
 
 ## Adding a Member
 

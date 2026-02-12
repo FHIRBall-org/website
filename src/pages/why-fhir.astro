@@ -2,59 +2,212 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Why FHIR" description="Understanding FHIR and its benefits for healthcare">
-  <!-- Hero Section -->
-  <section class="hero-bg-healthcare relative py-20 bg-cover bg-center bg-no-repeat">
-    <div class="absolute inset-0 bg-primary/80"></div>
-    <div class="relative max-w-6xl mx-auto px-4 text-center">
-      <h1 class="text-5xl font-bold text-white">Why FHIR?</h1>
-      <p class="mt-6 text-xl text-white/90 max-w-2xl mx-auto">
-        The modern standard for healthcare data exchange
+<BaseLayout title="Why FHIR" description="We are building FHIR-based products because we want a world with better healthcare technology.">
+  <!-- Banner Section -->
+  <section class="hero-bg relative py-20 bg-cover bg-center bg-no-repeat">
+    <div class="max-w-[1200px] mx-auto px-[10px] text-center">
+      <h1 class="text-[40px] md:text-[50px] lg:text-[60px] font-bold text-white uppercase">WHY <strong>FHIR</strong></h1>
+      <p class="mt-6 text-[16px] md:text-[20px] text-white/90 max-w-2xl mx-auto">
+        We are building FHIR-based products because we want a world with better healthcare technology.
       </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a
+          href="/members"
+          class="inline-block border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 py-3 font-medium transition-colors"
+        >
+          Find FHIR Expert
+        </a>
+        <a
+          href="/contact"
+          class="inline-block border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 py-3 font-medium transition-colors"
+        >
+          Join FHIRBall
+        </a>
+      </div>
     </div>
   </section>
 
-  <div class="max-w-3xl mx-auto px-4 py-12">
-    <div class="prose prose-lg max-w-none">
-      <p class="text-lg text-text-light">
-        FHIR (Fast Healthcare Interoperability Resources) is a data standard that allows better access to health information.
-      </p>
-
-      <h2>What is FHIR?</h2>
-      <p>
-        FHIR is a standard developed by HL7 International for exchanging healthcare information electronically. It combines the best features of previous HL7 standards with modern web technologies.
-      </p>
-
-      <h2>Benefits of FHIR</h2>
-      <ul>
-        <li><strong>Interoperability:</strong> Enables seamless data exchange between different healthcare systems</li>
-        <li><strong>Modern Architecture:</strong> Built on RESTful APIs and modern web standards</li>
-        <li><strong>Flexibility:</strong> Supports a wide range of healthcare use cases</li>
-        <li><strong>Developer-Friendly:</strong> Easy to implement with familiar web technologies</li>
-        <li><strong>Patient-Centered:</strong> Empowers patients with access to their own health data</li>
-      </ul>
-
-      <h2>FHIR in Action</h2>
-      <p>
-        FHIR is being adopted across the healthcare industry, from electronic health records to mobile health apps. It's the foundation for initiatives like the 21st Century Cures Act and CMS Interoperability rules.
-      </p>
+  <!-- The Problem -->
+  <section class="py-16">
+    <div class="max-w-[1200px] mx-auto px-[10px]">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h2 class="text-[32px] font-bold text-text">The <strong>problem</strong></h2>
+          <p class="text-[18px] leading-[28px] text-text-light mt-4">
+            Clinical data is being produced at an exponential level but we aren't storing and exchanging all this information efficiently enough.
+          </p>
+          <ol class="list-decimal pl-6 mt-6 space-y-4 text-[16px] leading-[24px] text-text">
+            <li>Each institution has their own system of storing data, making it extremely difficult to exchange data between hospitals, health institutions or patients</li>
+            <li>Difficulty in exchanging data leaves a lot of room for error when transferring health data from one institution to another</li>
+            <li>No easy way to connect patient-generated data with clinical data or public health records</li>
+            <li>Closed APIs also means we can't use AI to process all this health data efficiently</li>
+          </ol>
+        </div>
+        <div>
+          <img
+            src="/images/why-fhir-problem.png"
+            alt="The problem with healthcare data exchange"
+            class="w-full h-auto rounded object-cover"
+            loading="lazy"
+          />
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
+
+  <!-- How FHIR Solves It -->
+  <section class="py-16 bg-surface">
+    <div class="max-w-[1200px] mx-auto px-[10px]">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <img
+            src="/images/why-fhir-solution.png"
+            alt="How FHIR solves healthcare data challenges"
+            class="w-full h-auto rounded object-cover"
+            loading="lazy"
+          />
+        </div>
+        <div>
+          <h2 class="text-[32px] font-bold text-text">How FHIR <strong>solves it</strong></h2>
+          <p class="text-[18px] leading-[28px] text-text-light mt-4">
+            HL7® FHIR® is a standard for storing and exchanging electronic healthcare data among hospitals, health institutions, and patients.
+          </p>
+          <ol class="list-decimal pl-6 mt-6 space-y-4 text-[16px] leading-[24px] text-text">
+            <li>FHIR has a level of consistency that hasn't been seen in other data standards</li>
+            <li>Using FHIR will provide greater access to patient data and clinical data</li>
+            <li>FHIR allows health institutions to implement standardized, safe and efficient APIs</li>
+            <li>FHIR also makes it possible to process health data using AI</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Game-Changer Heading -->
+  <section class="py-16">
+    <div class="max-w-[1200px] mx-auto px-[10px] text-center">
+      <h2 class="text-[32px] md:text-[40px] lg:text-[48px] font-bold text-text leading-tight">
+        Here's how FHIR is a<br />real game-changer for Health IT
+      </h2>
+    </div>
+  </section>
+
+  <!-- Patients in Control -->
+  <section class="py-12">
+    <div class="max-w-[1200px] mx-auto px-[10px]">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h3 class="text-[24px] font-bold text-text">It's a shift towards putting <strong>patients in control</strong></h3>
+          <p class="text-[16px] leading-[24px] text-text mt-4">
+            Opening up health data also allows app developers to create impactful, patient-facing apps that can give patients control and access over their own data. FHIR also makes it possible to connect clinical data with Personal Health Records (PHR).
+          </p>
+        </div>
+        <div>
+          <img
+            src="/images/why-fhir-patients.png"
+            alt="Patients in control of their health data"
+            class="w-full h-auto rounded object-cover"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Data Transparency -->
+  <section class="py-12 bg-surface">
+    <div class="max-w-[1200px] mx-auto px-[10px]">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <img
+            src="/images/why-fhir-transparency.jpg"
+            alt="Data transparency in healthcare"
+            class="w-full h-auto rounded object-cover"
+            loading="lazy"
+          />
+        </div>
+        <div>
+          <h3 class="text-[24px] font-bold text-text">A step towards <strong>data transparency</strong></h3>
+          <p class="text-[16px] leading-[24px] text-text mt-4">
+            Health data shouldn't be stuck in siloed Electronic Health Records (EHRs). Data-centric architectures and open APIs can unlock infinite possibilities for health data. This can greatly improve the way patients and doctors use data to monitor and improve health.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI and Data Analytics -->
+  <section class="py-12">
+    <div class="max-w-[1200px] mx-auto px-[10px]">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h3 class="text-[24px] font-bold text-text">And a giant leap towards <strong>AI and data analytics</strong></h3>
+          <p class="text-[16px] leading-[24px] text-text mt-4">
+            Clinical data is being produced every minute of every day. With this volume of information, healthcare workers need AI to use and analyze data. FHIR data structures provide an easy way to slice and dice data for efficient analytics.
+          </p>
+        </div>
+        <div>
+          <img
+            src="/images/why-fhir-analytics.jpg"
+            alt="AI and data analytics in healthcare"
+            class="w-full h-auto rounded object-cover"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- World on FHIR -->
+  <section class="py-16 bg-surface">
+    <div class="max-w-[1200px] mx-auto px-[10px]">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <img
+            src="/images/why-fhir-world.jpg"
+            alt="Imagine a world on FHIR"
+            class="w-full h-auto rounded object-cover"
+            loading="lazy"
+          />
+        </div>
+        <div>
+          <h2 class="text-[32px] font-bold text-text">Imagine a <strong>world on FHIR</strong></h2>
+          <p class="text-[18px] leading-[28px] text-text-light mt-4">
+            FHIR is the first step to an interoperable health ecosystem. Here's how that could look like for doctors, patients and clinicians:
+          </p>
+          <ol class="list-decimal pl-6 mt-6 space-y-4 text-[16px] leading-[24px] text-text">
+            <li>Patients can access their clinical records and medical history on their phones</li>
+            <li>Health data won't get lost in translation when switching hospitals (less error)</li>
+            <li>New doctors can view all your health records to make sounder choices for treatment</li>
+            <li>Health providers can automate clinical support and process health data with AI</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- CTA Section -->
   <section class="cta-bg-collaboration relative py-24 bg-cover bg-center bg-no-repeat">
     <div class="absolute inset-0 bg-text/70"></div>
-    <div class="relative max-w-6xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold text-white">Ready to Adopt FHIR?</h2>
-      <p class="mt-4 text-lg text-white/90">
-        Our members can help you implement FHIR solutions.
+    <div class="relative max-w-[1200px] mx-auto px-[10px] text-center">
+      <h2 class="text-[28px] md:text-[36px] font-bold text-white">Ready to join the movement?</h2>
+      <p class="mt-4 text-[16px] md:text-[18px] text-white/90 max-w-2xl mx-auto">
+        FHIR is creating an interoperable future for healthcare systems around the world.
       </p>
-      <a
-        href="/members"
-        class="inline-block mt-8 bg-primary hover:bg-primary-hover text-white px-8 py-3 rounded font-medium transition-colors"
-      >
-        Explore Our Members
-      </a>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a
+          href="/members"
+          class="inline-block border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 py-3 font-medium transition-colors"
+        >
+          Find a FHIR Expert
+        </a>
+        <a
+          href="/contact"
+          class="inline-block border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 py-3 font-medium transition-colors"
+        >
+          Join FHIRBall
+        </a>
+      </div>
     </div>
   </section>
 </BaseLayout>
