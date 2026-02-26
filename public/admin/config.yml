@@ -16,7 +16,7 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string", required: true }
       - { label: "Description", name: "description", widget: "string", required: true }
-      - { label: "Publish Date", name: "pubDate", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, required: true }
+      - { label: "Publish Date", name: "pubDate", widget: "datetime", date_format: "YYYY-MM-DD", required: true }
       - { label: "Author", name: "author", widget: "string", default: "FHIRBall Alliance", required: false }
       - { label: "Featured Image", name: "image", widget: "image", required: false }
       - { label: "Tags", name: "tags", widget: "list", required: false }
@@ -30,8 +30,8 @@ collections:
       - { label: "Title", name: "title", widget: "string", required: true }
       - { label: "Image", name: "image", widget: "image", required: false }
       - { label: "Location", name: "location", widget: "string", required: false }
-      - { label: "Start Date", name: "startDate", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, required: true }
-      - { label: "End Date", name: "endDate", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, required: false }
+      - { label: "Start Date", name: "startDate", widget: "datetime", date_format: "YYYY-MM-DD", required: true }
+      - { label: "End Date", name: "endDate", widget: "datetime", date_format: "YYYY-MM-DD", required: false }
       - { label: "Time", name: "time", widget: "string", required: false }
       - { label: "Description", name: "description", widget: "text", required: true }
       - { label: "External URL", name: "externalUrl", widget: "string", required: true }
