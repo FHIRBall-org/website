@@ -35,8 +35,10 @@ test.describe('Events Page', () => {
   });
 
   test('should display event images', async ({ page }) => {
-    const images = page.locator('img[src^="/images/events/"]');
-    const count = await images.count();
+    const images = page.locator('img[alt]').filter({ has: page.locator('[src]') });
+    const eventSection = page.locator('section').nth(1);
+    const eventImages = eventSection.locator('img');
+    const count = await eventImages.count();
     expect(count).toBeGreaterThanOrEqual(1);
   });
 });

@@ -1,6 +1,6 @@
 ---
 title: HIMSS 26 Global Health Conference & Exhibition
-image: /images/himss26_logo_lasvegas_1200.png
+image: ../../assets/images/events/himss26_logo_lasvegas_1200.png
 location: ""
 startDate: 2026-03-09
 endDate: 2026-03-12
