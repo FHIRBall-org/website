@@ -1,5 +1,6 @@
 ---
 title: Dev Days 2026
+image: /images/devdays2026.png
 location: Minneapolis, MN, USA  - McNamara Alumni Center
 startDate: 2026-06-15
 endDate: 2026-06-18
