@@ -1,6 +1,6 @@
 ---
 title: "HL7 FHIR Overview Course (US edition) by Firely"
-image: ../../assets/images/events/fhir-course-us-nov-2022.jpg
+image: /images/events/fhir-course-us-nov-2022.jpg
 location: Foggy Hills Camp, Mountain
 startDate: 2022-11-28
 endDate: 2022-11-30

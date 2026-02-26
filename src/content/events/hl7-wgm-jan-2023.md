@@ -1,6 +1,6 @@
 ---
 title: "January HL7 Working Group Meeting & FHIR Connectathon"
-image: ../../assets/images/events/hl7-wgm-jan-2023.jpg
+image: /images/events/hl7-wgm-jan-2023.jpg
 location: Foggy Hills Camp, Mountain
 startDate: 2023-01-14
 endDate: 2023-01-19

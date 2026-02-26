@@ -29,21 +29,21 @@ const members = defineCollection({
 
 const articles = defineCollection({
   type: 'content',
-  schema: ({ image }) => z.object({
+  schema: z.object({
     title: z.string(),
     description: z.string(),
     pubDate: z.coerce.date(),
     author: z.string().default('FHIRBall Alliance'),
-    image: image().optional(),
+    image: z.string().optional(),
     tags: z.array(z.string()).default([]),
   }),
 });
 
 const events = defineCollection({
   type: 'content',
-  schema: ({ image }) => z.object({
+  schema: z.object({
     title: z.string(),
-    image: image().optional(),
+    image: z.string().optional(),
     location: z.string().optional(),
     startDate: z.coerce.date(),
     endDate: z.coerce.date().optional(),
