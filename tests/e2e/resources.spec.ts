@@ -47,3 +47,22 @@ test.describe('Article Detail Page', () => {
     await expect(page.getByRole('link', { name: /Back to Resources/i })).toBeVisible();
   });
 });
+
+test.describe('CMS Admin Page', () => {
+  test('should load the admin page', async ({ page }) => {
+    await page.goto('/admin/index.html');
+    await expect(page).toHaveTitle('FHIRBall CMS');
+  });
+
+  test('should load Netlify Identity widget script', async ({ page }) => {
+    await page.goto('/admin/index.html');
+    const identityScript = page.locator('script[src*="netlify-identity-widget"]');
+    await expect(identityScript).toBeAttached();
+  });
+
+  test('should load Decap CMS script', async ({ page }) => {
+    await page.goto('/admin/index.html');
+    const cmsScript = page.locator('script[src*="decap-cms"]');
+    await expect(cmsScript).toBeAttached();
+  });
+});
