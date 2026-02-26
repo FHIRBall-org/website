@@ -11,6 +11,7 @@ FHIRBall (FHIR Business Alliance) marketing website. A static site promoting FHI
 - **Font:** Montserrat (via @fontsource)
 - **Hosting:** Netlify (auto-deploys on push to `main`)
 - **Forms:** Netlify Forms (contact form with honeypot spam protection)
+- **CMS:** Decap CMS at `/admin` (Netlify Identity + Git Gateway auth)
 - **Testing:** Vitest (unit) + Playwright (E2E)
 
 ## Repository
@@ -42,13 +43,17 @@ src/
   layouts/          # BaseLayout.astro
   pages/            # File-based routing
     members/[slug]  # Dynamic member detail pages
-    articles/[slug] # Dynamic article pages
+    resources/[slug] # Dynamic article pages
   styles/
     global.css      # Global styles and custom CSS
 public/
+  admin/
+    index.html      # Decap CMS admin SPA
+    config.yml      # CMS collection and field definitions
   images/
     members/        # Member logo images
     events/         # Event images
+    articles/       # Article images (CMS uploads)
     backgrounds/    # Background images
   form.html         # Static form for Netlify Forms detection
 ```
@@ -65,6 +70,17 @@ Defined in `src/content.config.ts`:
 
 1. Add logo image to `public/images/members/`
 2. Create markdown file in `src/content/members/` with required frontmatter (name, website, description)
+
+## CMS (Decap CMS)
+
+- **Admin URL:** `/admin` (static SPA in `public/admin/`)
+- **Auth:** Netlify Identity + Git Gateway (email/password, invite-only, 5 free users)
+- **Managed collections:** Articles and Events (WYSIWYG editing with editorial workflow)
+- **Editorial workflow:** Draft → In Review → Ready (git branches + PRs)
+- **Media uploads:** `public/images/` with `/images/` URL paths
+- **Config:** `public/admin/config.yml` — field definitions must match `src/content.config.ts` schema
+- **Scripts in BaseLayout:** Netlify Identity widget and login redirect use `is:inline` (required for Astro)
+- **Design doc:** `docs/plans/2026-02-26-decap-cms-design.md`
 
 ## Key Conventions
 

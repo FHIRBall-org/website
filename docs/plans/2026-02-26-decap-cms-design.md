@@ -89,7 +89,7 @@ No GitHub accounts required for editors. Netlify Git Gateway commits on their be
 
 - **Upload destination**: `public/images/` (served directly by Netlify CDN)
 - **Path in Markdown frontmatter**: `/images/` (absolute URL path)
-- **Optimization**: Browser-level via `loading="lazy"` and `decoding="async"` attributes; display sizing via CSS container constraints (`object-cover`)
+- **Optimization**: Browser-level via `loading="lazy"` and `decoding="async"` attributes; display sizing via CSS container constraints (`object-contain`)
 - **Content schema**: `z.string().optional()` for image fields in `src/content.config.ts`
 
 **Note on Astro `<Image>` component**: Build-time image optimization (resizing, webp conversion) was evaluated but is incompatible with Decap CMS. Astro's `<Image>` requires images in `src/assets/`, but Decap CMS needs images at a browser-accessible URL (in `public/`) for media library previews. These requirements are mutually exclusive for static sites.
@@ -105,7 +105,7 @@ No GitHub accounts required for editors. Netlify Git Gateway commits on their be
 ### Modified Files
 
 - `src/layouts/BaseLayout.astro` — Added Netlify Identity widget script (`is:inline`) and login redirect script (`is:inline`)
-- `src/pages/events.astro` — Added `loading="lazy"` and `decoding="async"` to event images
+- `src/pages/events.astro` — Added `loading="lazy"`, `decoding="async"`, `object-contain`, image padding; changed sort to ascending by startDate
 - `src/pages/resources/[slug].astro` — Added `loading="lazy"` and `decoding="async"` to article featured images
 - `tests/e2e/resources.spec.ts` — Added E2E tests for admin page
 
