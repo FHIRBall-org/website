@@ -87,30 +87,26 @@ No GitHub accounts required for editors. Netlify Git Gateway commits on their be
 
 ## Media Handling
 
-- **Upload destination**: `src/assets/images/` (processed by Astro's build pipeline)
-- **Path in Markdown frontmatter**: `../../assets/images/` (relative from content files)
-- **Optimization**: Astro's `<Image>` component generates multiple sizes (webp) at build time
-  - Events page: `widths={[300, 600]}` — optimized for the 300px image container
-  - Article detail page: `widths={[400, 800, 1200]}` — responsive for full-width display
-- **Content schema**: Uses Astro's `image()` helper in `src/content.config.ts` for build-time validation and processing
+- **Upload destination**: `public/images/` (served directly by Netlify CDN)
+- **Path in Markdown frontmatter**: `/images/` (absolute URL path)
+- **Optimization**: Browser-level via `loading="lazy"` and `decoding="async"` attributes; display sizing via CSS container constraints (`object-cover`)
+- **Content schema**: `z.string().optional()` for image fields in `src/content.config.ts`
+
+**Note on Astro `<Image>` component**: Build-time image optimization (resizing, webp conversion) was evaluated but is incompatible with Decap CMS. Astro's `<Image>` requires images in `src/assets/`, but Decap CMS needs images at a browser-accessible URL (in `public/`) for media library previews. These requirements are mutually exclusive for static sites.
 
 ## Files Added/Modified
 
 ### New Files
 
 - `public/admin/index.html` — Static HTML page that loads Decap CMS and Netlify Identity widget from CDN
-- `public/admin/config.yml` — CMS configuration (backend, editorial workflow, media paths, collections)
-- `src/assets/images/events/` — Event images (moved from `public/images/events/` for build-time optimization)
-- `src/assets/images/articles/` — Article images directory for CMS uploads
+- `public/admin/config.yml` — CMS configuration (backend, editorial workflow, media paths, articles and events collections)
+- `public/images/articles/.gitkeep` — Directory for CMS article image uploads
 
 ### Modified Files
 
 - `src/layouts/BaseLayout.astro` — Added Netlify Identity widget script (`is:inline`) and login redirect script (`is:inline`)
-- `src/pages/events.astro` — Uses Astro `<Image>` component for event images
-- `src/pages/resources/[slug].astro` — Uses Astro `<Image>` component for article featured images
-- `src/content.config.ts` — Articles and events schemas use `image()` helper instead of `z.string()` for image fields
-- `src/content/events/*.md` — Image paths updated to relative `src/assets/` paths
-- `tests/e2e/events.spec.ts` — Updated image test for optimized image paths
+- `src/pages/events.astro` — Added `loading="lazy"` and `decoding="async"` to event images
+- `src/pages/resources/[slug].astro` — Added `loading="lazy"` and `decoding="async"` to article featured images
 - `tests/e2e/resources.spec.ts` — Added E2E tests for admin page
 
 ## Infrastructure Setup (Netlify Dashboard)
