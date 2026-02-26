@@ -37,7 +37,7 @@ const relatedPosts = allArticles
   <!-- Article Body -->
   <article class="max-w-3xl mx-auto px-[10px] py-12">
     {article.data.image && (
-      <img src={article.data.image} alt="" class="w-full rounded-lg mb-8" />
+      <img src={article.data.image} alt="" class="w-full rounded-lg mb-8" loading="lazy" decoding="async" />
     )}
     <div class="article-content">
       <Content />
