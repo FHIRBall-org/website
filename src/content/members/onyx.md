@@ -12,7 +12,8 @@ linkedin: "https://www.linkedin.com/company/43215528/"
 twitter: "https://twitter.com/onyxhealth_tech"
 youtube: "https://www.youtube.com/@onyxhealth/featured"
 certifications:
-  - "SOC 2"
+  - "HITRUST Certified"
+  - "SOC 2 Type II"
   - "Drummond Certification - Provider Directory / Formulary"
 serviceAreas:
   - "Global"
@@ -22,10 +23,23 @@ services:
   - "Consulting / Professional Services"
   - "Managed Services"
 industries:
-  - "Hospitals / Hospital Systems / Providers"
   - "Health Insurance / Payers"
-  - "Health IT Vendors"
-  - "Medical Devices / Equipment / IoT"
+  - "State Medicaid Programs"
+  - "Medicare Advantage Plans"
+  - "Provider Organizations / Health Systems"
+  - "Healthcare Technology Vendors"
+  - "Government Healthcare Programs"
+
 ---
 
-Onyx provides services to make the implementation and operation of FHIR-based interoperability solutions easy for our clients. OnyxOS is the Operating System for Healthcare that accelerates Interoperability. Onyx is deeply committed to promoting the advancement of the FHIR Specification through our support of the HL7 Da Vinci, CARIN Alliance, Gravity, and Helios accelerators.
+**From Interoperability to Intelligence**
+
+Onyx helps health plans turn connected clinical data into operational advantage.
+
+At the center is **FHIR-native OnyxOS**, our payer intelligence platform that enables plans to acquire, unify, and operationalize clinical data across compliance, quality, risk, care management, payment integrity, and prior authorization workflows.
+
+Our modular solutions include **Onyx DataBridge** for scalable clinical data acquisition, **Onyx IntegratedDataRepository** for creating a trusted longitudinal data foundation, **Onyx Intelligence** for AI-powered clinical insights, and **Onyx Compliance** for CMS-0057 and regulatory readiness.
+
+Built on a FHIR-native, model-driven architecture, OnyxOS helps health plans acquire data once and reuse it across the organization — moving from interoperability as a mandate to intelligence as a strategic advantage.
+
+Onyx supports **50+ payer organizations**, including **25+ state Medicaid programs**, representing **55M+ lives**.
