@@ -1,6 +1,6 @@
 ---
 name: "Onyx Health"
-logo: "/images/members/onyx.png"
+logo: "/images/members/2026-05 Onyx Logo Black.svg"
 website: "https://onyxhealth.io/"
 description: "Onyx provides services to make the implementation and operation of FHIR-based interoperability solutions easy."
 category: "founding"
@@ -18,10 +18,12 @@ certifications:
 serviceAreas:
   - "Global"
 services:
-  - "Software Vendor"
-  - "FHIR Server"
-  - "Consulting / Professional Services"
-  - "Managed Services"
+  - "OnyxOS Payer Intelligence Platform"
+  - "Onyx DataBridge"
+  - "Onyx IIntegrated Data Repository"
+  - "Onyx Intelligence"
+  - "Onyx Compliance"
+  - "Onyx Expert Services"
 industries:
   - "Health Insurance / Payers"
   - "State Medicaid Programs"
@@ -38,7 +40,7 @@ Onyx helps health plans turn connected clinical data into operational advantage.
 
 At the center is **FHIR-native OnyxOS**, our payer intelligence platform that enables plans to acquire, unify, and operationalize clinical data across compliance, quality, risk, care management, payment integrity, and prior authorization workflows.
 
-Our modular solutions include **Onyx DataBridge** for scalable clinical data acquisition, **Onyx IntegratedDataRepository** for creating a trusted longitudinal data foundation, **Onyx Intelligence** for AI-powered clinical insights, and **Onyx Compliance** for CMS-0057 and regulatory readiness.
+Our modular solutions include **Onyx DataBridge** for scalable clinical data acquisition, **Onyx Integrated Data Repository** for creating a trusted longitudinal data foundation, **Onyx Intelligence** for AI-powered clinical insights, and **Onyx Compliance** for CMS-0057 and regulatory readiness.
 
 Built on a FHIR-native, model-driven architecture, OnyxOS helps health plans acquire data once and reuse it across the organization — moving from interoperability as a mandate to intelligence as a strategic advantage.
 
