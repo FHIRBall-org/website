@@ -13,6 +13,7 @@ export async function getStaticPaths() {
 const { member } = Astro.props;
 const { Content } = await member.render();
 const data = member.data;
+const hasServiceTable = data.services.some((s: string | { name: string; description: string }) => typeof s === 'object');
 ---
 
 <BaseLayout title={data.name} description={data.description}>
@@ -134,7 +135,7 @@ const data = member.data;
 
       <!-- Row 3: Service Areas, Services, Industries -->
       <div class="flex flex-col md:flex-row gap-4">
-        <div class="w-full md:w-1/3 max-md:mb-5">
+        <div class={`w-full max-md:mb-5 ${hasServiceTable ? 'md:w-1/5' : 'md:w-1/3'}`}>
           <h3>Service Area</h3>
           {data.serviceAreas && data.serviceAreas.length > 0 ? (
             data.serviceAreas.map((area: string) => (
@@ -144,17 +145,42 @@ const data = member.data;
             <p class="font-medium mb-0 text-text">Not specified</p>
           )}
         </div>
-        <div class="w-full md:w-1/3 max-md:mb-5">
+        <div class={`w-full max-md:mb-5 ${hasServiceTable ? 'md:w-3/5' : 'md:w-1/3'}`}>
           <h3>Services / Products</h3>
           {data.services && data.services.length > 0 ? (
-            data.services.map((service: string) => (
-              <p class="font-medium mb-0 text-text">{service}</p>
-            ))
+            data.services.some((s: string | { name: string; description: string }) => typeof s === 'object') ? (
+              <table class="w-full text-sm">
+                <thead>
+                  <tr>
+                    <th class="text-left font-semibold pb-1 pr-4">Name</th>
+                    <th class="text-left font-semibold pb-1">Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {data.services.map((s: string | { name: string; description: string }) =>
+                    typeof s === 'object' ? (
+                      <tr>
+                        <td class="font-medium pr-4 align-top">{s.name}</td>
+                        <td class="text-text align-top">{s.description}</td>
+                      </tr>
+                    ) : (
+                      <tr>
+                        <td class="font-medium" colspan="2">{s}</td>
+                      </tr>
+                    )
+                  )}
+                </tbody>
+              </table>
+            ) : (
+              data.services.map((service: string | { name: string; description: string }) => (
+                <p class="font-medium mb-0 text-text">{service as string}</p>
+              ))
+            )
           ) : (
             <p class="font-medium mb-0 text-text">Not specified</p>
           )}
         </div>
-        <div class="w-full md:w-1/3 max-md:mb-5">
+        <div class={`w-full max-md:mb-5 ${hasServiceTable ? 'md:w-1/5' : 'md:w-1/3'}`}>
           <h3>Industries Served</h3>
           {data.industries && data.industries.length > 0 ? (
             data.industries.map((industry: string) => (

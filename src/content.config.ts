@@ -18,7 +18,12 @@ const members = defineCollection({
     youtube: z.string().optional(),
     certifications: z.array(z.string()).default([]),
     serviceAreas: z.array(z.string()).default([]),
-    services: z.array(z.string()).default([]),
+    services: z.array(
+      z.union([
+        z.string(),
+        z.object({ name: z.string(), description: z.string() }),
+      ])
+    ).default([]),
     industries: z.array(z.string()).default([]),
     memberArticles: z.array(z.object({
       title: z.string(),

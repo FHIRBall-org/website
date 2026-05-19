@@ -8,9 +8,7 @@ location: "USA"
 phone: "+1-818-731-1279"
 contactName: "Pavel Smirnov"
 email: "hello@health-samurai.io"
-facebook: "https://www.facebook.com/healthsamurai"
 linkedin: "https://www.linkedin.com/company/health-samurai/"
-twitter: "https://twitter.com/health_samurai"
 youtube: "https://www.youtube.com/channel/UCvns9fJyVY9iSfDqMQlykFQ"
 serviceAreas:
   - "Global"
@@ -19,21 +17,41 @@ serviceAreas:
   - "LATAM"
   - "NORAM"
 services:
-  - "FHIR Server"
+# Two-column table format (also increases the width of this section)
+    - name: "Aidbox"
+      description: "FHIR server and platform for healthcare developers"
+    - name: "Formbox"
+      description: "Clinical forms with FHIR Questionnaire support"
+    - name: "Termbox"
+      description: "FHIR terminology server for ValueSets & CodeSystems"
+    - name: "MDMbox"
+      description: "Master data management for healthcare organizations"
+    - name: "Payerbox"
+      description: "CMS-0057 compliance platform for health plans"
+    - name: "eRxbox"
+      description: "Electronic prescribing and medication management"
+    - name: "Smartbox"
+      description: "SMART on FHIR app launcher and authorization platform"
+    
 industries:
   - "Pharmaceutical"
   - "App Developers"
   - "Providers"
   - "Payers"
 memberArticles:
-  - title: "The FHIR Guide for CTOs and Technical Leaders"
-    url: "https://www.health-samurai.io/articles/the-fhir-guide-for-ctos-and-technical-leaders"
-  - title: "A Quick Guide to Telemedicine Software Alternatives for Medical Providers"
-    url: "https://www.health-samurai.io/articles/a-quick-guide-to-telemedicine-software-alternatives-for-medical-providers"
-  - title: "Narushealth"
-    url: "https://www.health-samurai.io/case-study/narushealth"
+  - title: "Health Samurai Lab: Aidbox Horizontal & Vertical Scaling"
+    url: "https://www.health-samurai.io/articles/aidbox-horizontal-vs-vertical-scaling"
+  - title: "Configuring and Tuning a Patient Matching Model: A Practical Guide"
+    url: "https://www.health-samurai.io/articles/configuring-tuning-patient-matching-model"
+  - title: "Termbox: A FHIR Terminology Server (Introduction)"
+    url: "https://www.health-samurai.io/articles/introducing-termbox"
+
 ---
 
-At Health Samurai, we want to transform care delivery with great software. We believe that an open, connected healthcare application ecosystem will drive higher quality care and lower costs. To help make this happen, we have a simple plan: give people the tools they need to build life-changing technologies and handle healthcare data the right way. We believe that when you empower people with the right data and tools, amazing things happen.
+Building healthcare applications is complex and time-consuming, and we know this firsthand — we've been creating custom health IT solutions since 2004.
 
-We have been a part of the FHIR movement since its early days and interpreted FHIR as a framework for the development of high-quality open systems for healthcare. In 2015 we started building the Aidbox platform to put together and re-use FHIR and our best engineering ideas. Aidbox saves years of work and improves quality. Nowadays, Aidbox powers a few dozens of cloud EHR systems, telemedicine platforms, care coordination solutions, patient-facing mobile applications, data analytics products, and more.
+In 2012, we discovered the FHIR standard and quickly recognized its potential to simplify healthcare software development and reduce costs.
+
+After successfully applying FHIR in multiple projects, we used our years of experience to build Aidbox — a FHIR backend platform that helps organizations develop advanced healthcare solutions faster.
+
+With over two decades in health IT, we continue to lead the way in building an open, connected healthcare ecosystem that fosters innovation and collaboration.  
