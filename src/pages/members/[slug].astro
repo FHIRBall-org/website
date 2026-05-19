@@ -195,7 +195,7 @@ const hasServiceTable = data.services.some((s: string | { name: string; descript
       <!-- Row 4: Member Articles -->
       {data.memberArticles && data.memberArticles.length > 0 && (
         <div>
-          <h3>Members Articles:</h3>
+          <h3>Selected Articles</h3>
           <div class="[&_a]:text-text [&_a]:font-bold [&_a:hover]:underline">
             {data.memberArticles.map((article: { title: string; url: string }) => (
               <p>
