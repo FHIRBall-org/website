@@ -38,6 +38,13 @@ test.describe('Homepage', () => {
     await expect(page).toHaveURL(/\/purpose/);
     await expect(page.locator('h1').first()).toContainText(/Purpose/i);
   });
+
+  test('should display HL7 badge strip on homepage cards for HL7 members', async ({ page }) => {
+    await page.goto('/');
+    const memberSection = page.locator('section').filter({ hasText: /Our members are leaders/i });
+    const strip = memberSection.locator('.org-badge-strip').first();
+    await expect(strip).toBeVisible();
+  });
 });
 
 test.describe('Footer', () => {

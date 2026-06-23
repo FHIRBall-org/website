@@ -81,6 +81,19 @@ const sortedMembers = members.sort((a, b) =>
                 <p class="mt-1 text-[14px] text-text-light">{member.data.email}</p>
               )}
             </div>
+            {member.data.orgLogos.filter(o => o.cardBadge).length > 0 && (
+              <div
+                class="org-badge-strip px-3 py-2 border-t flex items-center justify-center gap-2"
+                style="background: #fef9f0; border-color: #f0e0c0;"
+              >
+                {member.data.orgLogos.filter(o => o.cardBadge).map(org => (
+                  <span class="inline-flex items-center gap-1 bg-white border border-[#ddd] rounded px-1.5 py-0.5 text-[9px] font-bold shadow-sm">
+                    <img src={org.logo} alt={org.name} class="h-3 w-auto object-contain" />
+                    <span>{org.name}</span>
+                  </span>
+                ))}
+              </div>
+            )}
           </a>
         ))}
       </div>
