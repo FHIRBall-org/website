@@ -31,6 +31,11 @@ industries:
   - "Health IT Vendors"
   - "Health Information Exchanges & Networks"
   - "Public Health & Government Programs"
+orgLogos:
+  - name: "HL7 International"
+    logo: "/images/org-logos/hl7.png"
+    url: "https://www.hl7.org"
+    cardBadge: true
 ---
 
 Firely is a global digital healthcare company providing software, training, and consultancy to bring FHIR to life. As one of the initiators of the HL7 FHIR standard, Firely has helped shape its evolution from the very beginning.

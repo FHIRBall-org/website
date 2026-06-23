@@ -60,6 +60,39 @@ describe('Article Content', () => {
   });
 });
 
+describe('Member orgLogos Validation', () => {
+  const memberFiles = readdirSync(membersDir).filter(f => f.endsWith('.md'));
+
+  memberFiles.forEach((file) => {
+    const content = readFileSync(join(membersDir, file), 'utf-8');
+    const frontmatter = content.split('---')[1];
+
+    if (!frontmatter.includes('orgLogos:')) return;
+
+    describe(`${file}: orgLogos`, () => {
+      it('should have at least one entry', () => {
+        expect(frontmatter).toMatch(/orgLogos:\s*\n\s+- /);
+      });
+
+      it('should have a name field in each entry', () => {
+        expect(frontmatter).toMatch(/- name:\s*.+/);
+      });
+
+      it('should have logo path under /images/org-logos/', () => {
+        expect(frontmatter).toMatch(/logo:\s*["']?\/images\/org-logos\//);
+      });
+
+      it('should have a https url', () => {
+        expect(frontmatter).toMatch(/url:\s*["']?https:\/\//);
+      });
+
+      it('should have cardBadge as true or false', () => {
+        expect(frontmatter).toMatch(/cardBadge:\s*(true|false)/);
+      });
+    });
+  });
+});
+
 describe('CSS Classes', () => {
   const cssPath = join(process.cwd(), 'src/styles/global.css');
   const cssContent = readFileSync(cssPath, 'utf-8');

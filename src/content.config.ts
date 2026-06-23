@@ -29,6 +29,14 @@ const members = defineCollection({
       title: z.string(),
       url: z.string().url(),
     })).default([]),
+    orgLogos: z.array(
+      z.object({
+        name: z.string(),
+        logo: z.string(),
+        url: z.string().url(),
+        cardBadge: z.boolean().default(false),
+      })
+    ).default([]),
   }),
 });
 
