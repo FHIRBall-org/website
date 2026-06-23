@@ -28,6 +28,7 @@ const sortedMembers = members.sort((a, b) =>
           logo={member.data.logo}
           slug={member.id.replace(/\.md$/, '')}
           description={member.data.description}
+          orgLogos={member.data.orgLogos}
         />
       ))}
     </div>

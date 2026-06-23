@@ -19,6 +19,12 @@ test.describe('Members Page', () => {
     await firstMemberLink.click();
     await expect(page.url()).toMatch(/\/members\/.+/);
   });
+
+  test('should display org logo badges for HL7 members on listing page', async ({ page }) => {
+    await page.goto('/members');
+    const badge = page.locator('.member-org-logos').first();
+    await expect(badge).toBeVisible();
+  });
 });
 
 test.describe('Member Detail Page', () => {

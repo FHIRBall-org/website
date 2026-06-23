@@ -1,13 +1,21 @@
 ---
+interface OrgLogo {
+  name: string;
+  logo: string;
+  url: string;
+  cardBadge: boolean;
+}
+
 interface Props {
   name: string;
   logo?: string;
   slug: string;
   description: string;
   content?: string;
+  orgLogos?: OrgLogo[];
 }
 
-const { name, logo, slug, description, content } = Astro.props;
+const { name, logo, slug, description, content, orgLogos = [] } = Astro.props;
 ---
 
 <article class="bg-white border border-border rounded-lg p-6 hover:shadow-md transition-shadow">
@@ -41,4 +49,19 @@ const { name, logo, slug, description, content } = Astro.props;
       </a>
     </div>
   </div>
+  {orgLogos.length > 0 && (
+    <div class="member-org-logos mt-4 pt-3 border-t border-border flex flex-wrap gap-2">
+      {orgLogos.map((org) => (
+        <a
+          href={org.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-1.5 bg-white border border-border rounded px-2 py-1 text-xs font-semibold shadow-sm hover:shadow-md transition-shadow"
+        >
+          <img src={org.logo} alt={org.name} class="h-4 w-auto object-contain" />
+          <span>{org.name}</span>
+        </a>
+      ))}
+    </div>
+  )}
 </article>
