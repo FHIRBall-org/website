@@ -38,4 +38,12 @@ test.describe('Member Detail Page', () => {
     await page.goto('/members/healthlx');
     await expect(page.getByText('Members Articles:')).toBeVisible();
   });
+
+  test('should display Member of section for HL7 members', async ({ page }) => {
+    await page.goto('/members/firely');
+    const section = page.locator('.member-of-section');
+    await expect(section).toBeVisible();
+    await expect(section).toContainText('Member of');
+    await expect(section).toContainText('HL7 International');
+  });
 });

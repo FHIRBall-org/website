@@ -39,6 +39,24 @@ const hasServiceTable = data.services.some((s: string | { name: string; descript
               )}
             </a>
           </div>
+          {data.orgLogos.length > 0 && (
+            <div class="member-of-section mt-4">
+              <p class="text-xs font-bold uppercase tracking-widest text-text-light mb-2">Member of</p>
+              <div class="flex flex-nowrap gap-2 overflow-x-auto pb-1">
+                {data.orgLogos.map((org: { name: string; logo: string; url: string }) => (
+                  <a
+                    href={org.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1.5 bg-white border border-border rounded-md px-2.5 py-1.5 text-xs font-bold shadow-sm hover:shadow-md transition-shadow whitespace-nowrap flex-shrink-0"
+                  >
+                    <img src={org.logo} alt={org.name} class="h-5 w-auto object-contain" />
+                    <span>{org.name}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
         <div class="w-full md:ml-auto md:w-auto">
           <div class="flex flex-col gap-[7px]">
