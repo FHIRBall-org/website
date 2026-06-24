@@ -1,0 +1,459 @@
+<style>
+  :root {
+    --color-primary: #c27e00;
+    --color-border: #e0e0e0;
+    --color-surface: #f5f5f5;
+    --color-text: #1a1a1a;
+    --color-text-light: #666666;
+  }
+
+  .surface-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 12px;
+  }
+
+  /* HL7 logo badge mockup */
+  .hl7-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 2px 5px;
+    font-size: 10px;
+    font-weight: 800;
+    color: #cc0000;
+    line-height: 1;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+  }
+  .hl7-badge svg { width: 12px; height: 12px; }
+
+  .hl7-badge-sm {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1px 4px;
+    font-size: 9px;
+    font-weight: 800;
+    color: #cc0000;
+    line-height: 1;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  }
+
+  .hl7-badge-lg {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 800;
+    color: #cc0000;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  }
+  .hl7-badge-lg svg { width: 22px; height: 22px; }
+
+  /* HL7 flame SVG inline */
+  .flame { color: #cc0000; }
+
+  /* ===== HOMEPAGE CARD ===== */
+  .hp-card {
+    background: white;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    overflow: hidden;
+    width: 160px;
+    cursor: pointer;
+    transition: box-shadow 0.15s;
+  }
+  .hp-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.12); }
+  .hp-card-logo {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    background: white;
+    position: relative;
+  }
+  .hp-card-logo img { max-height: 100%; max-width: 100%; object-fit: contain; }
+  .hp-card-body {
+    padding: 12px;
+    text-align: center;
+    border-top: 1px solid var(--color-border);
+  }
+  .hp-card-name { font-weight: 700; font-size: 13px; color: var(--color-text); }
+  .hp-card-email { font-size: 11px; color: var(--color-text-light); margin-top: 3px; }
+
+  /* ===== MEMBER LISTING CARD ===== */
+  .list-card {
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    width: 100%;
+    max-width: 560px;
+  }
+  .list-card-logo {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    flex-shrink: 0;
+    position: relative;
+  }
+  .list-card-logo-wrap {
+    position: relative;
+    flex-shrink: 0;
+  }
+  .list-card-body { flex: 1; }
+  .list-card-name { font-size: 16px; font-weight: 600; color: var(--color-text); }
+  .list-card-desc { font-size: 13px; color: var(--color-text-light); margin-top: 4px; line-height: 1.4; }
+  .list-card-link { font-size: 13px; color: var(--color-primary); font-weight: 600; margin-top: 10px; display: inline-block; }
+
+  /* ===== DETAIL PAGE ===== */
+  .detail-panel {
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 24px;
+    max-width: 560px;
+  }
+  .detail-logo-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    width: 200px;
+    flex-shrink: 0;
+  }
+  .detail-logo-img {
+    max-width: 200px;
+    max-height: 80px;
+    object-fit: contain;
+  }
+  .detail-row { display: flex; gap: 24px; }
+  .detail-info { flex: 1; font-size: 13px; }
+  .detail-info-row { display: flex; gap: 10px; margin-bottom: 6px; }
+  .detail-info-label { color: var(--color-text-light); white-space: nowrap; }
+  .detail-info-value { font-weight: 600; color: var(--color-text); }
+
+  /* logo placeholder */
+  .logo-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-primary);
+    background: #fafafa;
+    border-radius: 4px;
+  }
+
+  .accel-logos { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+
+  /* badge strip */
+  .badge-strip {
+    background: #fef9f0;
+    border-top: 1px solid #f0e0c0;
+    padding: 6px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .section-divider {
+    border: none;
+    border-top: 1px solid var(--color-border);
+    margin: 28px 0;
+  }
+</style>
+
+<h2>HL7 Badge Placement Options</h2>
+<p class="subtitle">Three options across all three surfaces — homepage card, members listing card, and member detail page</p>
+
+<!-- ===== OPTION A ===== -->
+<div class="option" data-choice="a" onclick="toggleSelect(this)">
+  <div class="letter">A</div>
+  <div class="content">
+    <h3>Corner overlay on logo area</h3>
+    <p>Small HL7 badge floated to bottom-right of the logo image. On listing/detail: full set of logos below the company logo.</p>
+
+    <div style="display:flex; gap:32px; flex-wrap:wrap; align-items:flex-start; margin-top:16px;">
+
+      <!-- Homepage card -->
+      <div>
+        <div class="surface-label">Homepage card</div>
+        <div class="hp-card">
+          <div class="hp-card-logo">
+            <div class="logo-placeholder" style="width:80px;height:60px;">Firely</div>
+            <!-- badge overlaid bottom-right -->
+            <div style="position:absolute; bottom:8px; right:8px;">
+              <span class="hl7-badge-sm">
+                <svg viewBox="0 0 24 24" fill="#cc0000"><path d="M12 2C9 7 6 9 6 13a6 6 0 0012 0c0-4-3-6-6-11z"/></svg>
+                HL7
+              </span>
+            </div>
+          </div>
+          <div class="hp-card-body">
+            <div class="hp-card-name">Firely</div>
+            <div class="hp-card-email">info@fire.ly</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Listing card -->
+      <div>
+        <div class="surface-label">Members listing card</div>
+        <div class="list-card">
+          <div class="list-card-logo-wrap">
+            <div style="width:64px;height:64px;" class="logo-placeholder">Firely</div>
+            <div style="position:absolute;bottom:-4px;right:-4px;">
+              <span class="hl7-badge-sm">
+                <svg viewBox="0 0 24 24" fill="#cc0000" style="width:10px;height:10px;"><path d="M12 2C9 7 6 9 6 13a6 6 0 0012 0c0-4-3-6-6-11z"/></svg>
+                HL7
+              </span>
+            </div>
+          </div>
+          <div class="list-card-body">
+            <div class="list-card-name">Firely</div>
+            <div class="list-card-desc">A global digital healthcare company providing FHIR software, training, and consultancy.</div>
+            <div class="accel-logos" style="margin-top:10px;">
+              <span class="hl7-badge">
+                <svg viewBox="0 0 24 24" fill="#cc0000"><path d="M12 2C9 7 6 9 6 13a6 6 0 0012 0c0-4-3-6-6-11z"/></svg>
+                HL7
+              </span>
+              <span class="hl7-badge" style="color:#1a6fcc; border-color:#c0d8f0;">
+                <svg viewBox="0 0 24 24" fill="#1a6fcc"><rect x="4" y="4" width="16" height="16" rx="3"/></svg>
+                Da Vinci
+              </span>
+            </div>
+            <a class="list-card-link">View Profile →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Detail page -->
+      <div>
+        <div class="surface-label">Member detail page</div>
+        <div class="detail-panel">
+          <div class="detail-row">
+            <div class="detail-logo-col">
+              <div class="logo-placeholder" style="width:180px;height:70px;font-size:18px;">Firely</div>
+              <!-- logos below company logo -->
+              <div class="accel-logos">
+                <span class="hl7-badge">
+                  <svg viewBox="0 0 24 24" fill="#cc0000"><path d="M12 2C9 7 6 9 6 13a6 6 0 0012 0c0-4-3-6-6-11z"/></svg>
+                  HL7
+                </span>
+                <span class="hl7-badge" style="color:#1a6fcc; border-color:#c0d8f0;">
+                  <svg viewBox="0 0 24 24" fill="#1a6fcc"><rect x="4" y="4" width="16" height="16" rx="3"/></svg>
+                  Da Vinci
+                </span>
+              </div>
+            </div>
+            <div class="detail-info">
+              <div class="detail-info-row"><span class="detail-info-label">Location</span><span class="detail-info-value">US & Netherlands</span></div>
+              <div class="detail-info-row"><span class="detail-info-label">Contact</span><span class="detail-info-value">Martine Berden</span></div>
+              <div class="detail-info-row"><span class="detail-info-label">Website</span><span class="detail-info-value" style="color:var(--color-primary)">fire.ly</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ===== OPTION B ===== -->
+<div class="option" data-choice="b" onclick="toggleSelect(this)">
+  <div class="letter">B</div>
+  <div class="content">
+    <h3>Badge strip at card bottom</h3>
+    <p>A tinted footer band below the card body shows membership logos. Clean separation, never obscures the logo. On detail page: "Memberships" row in the contact info block.</p>
+
+    <div style="display:flex; gap:32px; flex-wrap:wrap; align-items:flex-start; margin-top:16px;">
+
+      <!-- Homepage card -->
+      <div>
+        <div class="surface-label">Homepage card</div>
+        <div class="hp-card" style="width:160px;">
+          <div class="hp-card-logo">
+            <div class="logo-placeholder" style="width:80px;height:60px;">Firely</div>
+          </div>
+          <div class="hp-card-body">
+            <div class="hp-card-name">Firely</div>
+            <div class="hp-card-email">info@fire.ly</div>
+          </div>
+          <div class="badge-strip">
+            <span class="hl7-badge-sm">
+              <svg viewBox="0 0 24 24" fill="#cc0000" style="width:10px;height:10px;"><path d="M12 2C9 7 6 9 6 13a6 6 0 0012 0c0-4-3-6-6-11z"/></svg>
+              HL7 Member
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Listing card -->
+      <div>
+        <div class="surface-label">Members listing card</div>
+        <div class="list-card" style="flex-direction:column; gap:12px;">
+          <div style="display:flex;gap:16px;align-items:flex-start;">
+            <div style="width:64px;height:64px;" class="logo-placeholder">Firely</div>
+            <div class="list-card-body">
+              <div class="list-card-name">Firely</div>
+              <div class="list-card-desc">A global digital healthcare company providing FHIR software, training, and consultancy.</div>
+              <a class="list-card-link">View Profile →</a>
+            </div>
+          </div>
+          <div style="border-top:1px solid var(--color-border); padding-top:10px; display:flex; gap:8px; flex-wrap:wrap;">
+            <span class="hl7-badge">
+              <svg viewBox="0 0 24 24" fill="#cc0000"><path d="M12 2C9 7 6 9 6 13a6 6 0 0012 0c0-4-3-6-6-11z"/></svg>
+              HL7
+            </span>
+            <span class="hl7-badge" style="color:#1a6fcc; border-color:#c0d8f0;">
+              <svg viewBox="0 0 24 24" fill="#1a6fcc"><rect x="4" y="4" width="16" height="16" rx="3"/></svg>
+              Da Vinci
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Detail page -->
+      <div>
+        <div class="surface-label">Member detail page</div>
+        <div class="detail-panel">
+          <div class="detail-row">
+            <div class="detail-logo-col">
+              <div class="logo-placeholder" style="width:180px;height:70px;font-size:18px;">Firely</div>
+            </div>
+            <div class="detail-info">
+              <div class="detail-info-row"><span class="detail-info-label">Location</span><span class="detail-info-value">US & Netherlands</span></div>
+              <div class="detail-info-row"><span class="detail-info-label">Contact</span><span class="detail-info-value">Martine Berden</span></div>
+              <div class="detail-info-row"><span class="detail-info-label">Website</span><span class="detail-info-value" style="color:var(--color-primary)">fire.ly</span></div>
+              <!-- memberships row -->
+              <div class="detail-info-row" style="align-items:center;">
+                <span class="detail-info-label">Member of</span>
+                <div class="accel-logos">
+                  <span class="hl7-badge">
+                    <svg viewBox="0 0 24 24" fill="#cc0000"><path d="M12 2C9 7 6 9 6 13a6 6 0 0012 0c0-4-3-6-6-11z"/></svg>
+                    HL7
+                  </span>
+                  <span class="hl7-badge" style="color:#1a6fcc; border-color:#c0d8f0;">
+                    <svg viewBox="0 0 24 24" fill="#1a6fcc"><rect x="4" y="4" width="16" height="16" rx="3"/></svg>
+                    Da Vinci
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ===== OPTION C ===== -->
+<div class="option" data-choice="c" onclick="toggleSelect(this)">
+  <div class="letter">C</div>
+  <div class="content">
+    <h3>Inline below company name</h3>
+    <p>Logos sit as a row of chips directly under the company name on cards. On detail page: prominent logo row below the company logo, above contact info.</p>
+
+    <div style="display:flex; gap:32px; flex-wrap:wrap; align-items:flex-start; margin-top:16px;">
+
+      <!-- Homepage card -->
+      <div>
+        <div class="surface-label">Homepage card</div>
+        <div class="hp-card">
+          <div class="hp-card-logo">
+            <div class="logo-placeholder" style="width:80px;height:60px;">Firely</div>
+          </div>
+          <div class="hp-card-body">
+            <div class="hp-card-name">Firely</div>
+            <div style="display:flex;justify-content:center;margin-top:5px;">
+              <span class="hl7-badge-sm">
+                <svg viewBox="0 0 24 24" fill="#cc0000" style="width:10px;height:10px;"><path d="M12 2C9 7 6 9 6 13a6 6 0 0012 0c0-4-3-6-6-11z"/></svg>
+                HL7 Member
+              </span>
+            </div>
+            <div class="hp-card-email" style="margin-top:4px;">info@fire.ly</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Listing card -->
+      <div>
+        <div class="surface-label">Members listing card</div>
+        <div class="list-card">
+          <div style="width:64px;height:64px;" class="logo-placeholder">Firely</div>
+          <div class="list-card-body">
+            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+              <div class="list-card-name">Firely</div>
+              <span class="hl7-badge">
+                <svg viewBox="0 0 24 24" fill="#cc0000"><path d="M12 2C9 7 6 9 6 13a6 6 0 0012 0c0-4-3-6-6-11z"/></svg>
+                HL7
+              </span>
+              <span class="hl7-badge" style="color:#1a6fcc; border-color:#c0d8f0;">
+                <svg viewBox="0 0 24 24" fill="#1a6fcc"><rect x="4" y="4" width="16" height="16" rx="3"/></svg>
+                Da Vinci
+              </span>
+            </div>
+            <div class="list-card-desc" style="margin-top:6px;">A global digital healthcare company providing FHIR software, training, and consultancy.</div>
+            <a class="list-card-link">View Profile →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Detail page -->
+      <div>
+        <div class="surface-label">Member detail page</div>
+        <div class="detail-panel">
+          <div class="detail-logo-col" style="width:100%;margin-bottom:16px;">
+            <div class="logo-placeholder" style="width:180px;height:70px;font-size:18px;">Firely</div>
+            <!-- prominent logo row below company logo -->
+            <div style="margin-top:10px;">
+              <div class="surface-label" style="margin-bottom:6px;">Member of</div>
+              <div class="accel-logos">
+                <span class="hl7-badge-lg">
+                  <svg viewBox="0 0 24 24" fill="#cc0000" style="width:18px;height:18px;"><path d="M12 2C9 7 6 9 6 13a6 6 0 0012 0c0-4-3-6-6-11z"/></svg>
+                  HL7 International
+                </span>
+                <span class="hl7-badge-lg" style="color:#1a6fcc; border-color:#c0d8f0;">
+                  <svg viewBox="0 0 24 24" fill="#1a6fcc" style="width:18px;height:18px;"><rect x="4" y="4" width="16" height="16" rx="3"/></svg>
+                  Da Vinci Project
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="detail-info" style="border-top:1px solid var(--color-border);padding-top:14px;">
+            <div class="detail-info-row"><span class="detail-info-label">Location</span><span class="detail-info-value">US & Netherlands</span></div>
+            <div class="detail-info-row"><span class="detail-info-label">Contact</span><span class="detail-info-value">Martine Berden</span></div>
+            <div class="detail-info-row"><span class="detail-info-label">Website</span><span class="detail-info-value" style="color:var(--color-primary)">fire.ly</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

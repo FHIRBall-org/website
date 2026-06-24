@@ -36,7 +36,7 @@ test.describe('Member Detail Page', () => {
 
   test('should display member articles section when articles exist', async ({ page }) => {
     await page.goto('/members/healthlx');
-    await expect(page.getByText('Members Articles:')).toBeVisible();
+    await expect(page.getByText('Selected Articles')).toBeVisible();
   });
 
   test('should display Member of section for HL7 members', async ({ page }) => {

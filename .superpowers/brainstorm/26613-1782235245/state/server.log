@@ -1,0 +1,6 @@
+{"type":"server-started","port":56254,"host":"127.0.0.1","url_host":"localhost","url":"http://localhost:56254/?key=466d93e03cc270f661f1245f443352ebf20e31ad9f823ec5fad842751fd68dc8","screen_dir":"/Users/jeffhelman/DEV/Content/FHIRBall-web/.superpowers/brainstorm/26613-1782235245/content","state_dir":"/Users/jeffhelman/DEV/Content/FHIRBall-web/.superpowers/brainstorm/26613-1782235245/state","idle_timeout_ms":14400000}
+{"type":"screen-added","file":"/Users/jeffhelman/DEV/Content/FHIRBall-web/.superpowers/brainstorm/26613-1782235245/content/badge-placement.html"}
+{"type":"screen-added","file":"/Users/jeffhelman/DEV/Content/FHIRBall-web/.superpowers/brainstorm/26613-1782235245/content/badge-placement-final.html"}
+{"type":"screen-added","file":"/Users/jeffhelman/DEV/Content/FHIRBall-web/.superpowers/brainstorm/26613-1782235245/content/badge-placement-final-v2.html"}
+{"type":"screen-added","file":"/Users/jeffhelman/DEV/Content/FHIRBall-web/.superpowers/brainstorm/26613-1782235245/content/waiting.html"}
+{"type":"server-stopped","reason":"idle timeout"}
