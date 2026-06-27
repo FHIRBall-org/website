@@ -33,7 +33,7 @@ industries:
   - "Public Health & Government Programs"
 orgLogos:
   - name: "HL7 International"
-    logo: "/images/org-logos/hl7.png"
+    logo: "/images/org-logos/HL7-IntNoeffects300px.png"
     url: "https://www.hl7.org"
     cardBadge: true
 ---

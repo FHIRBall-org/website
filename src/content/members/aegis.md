@@ -27,6 +27,15 @@ industries:
   - "Certification Bodies"
   - "Medical Devices / Equipment / IoT"
   - "Health IT Vendors"
+orgLogos:
+  - name: "HL7 International"
+    logo: "/images/org-logos/HL7-IntNoeffects300px.png"
+    url: "https://www.hl7.org"
+    cardBadge: true
+  - name: "HL7 FAST Accelerator"
+    logo: "/images/org-logos/HL7 FAST.png"
+    url: "https://www.hl7.org/fast"
+    cardBadge: true
 ---
 
 Touchstone by AEGIS is your easy-to-use platform that accelerates the development and deployment of interoperable and secure healthcare applications. The system provides a repeatable litmus test to decisively measure FHIR implementations. Whether you are building, changing, or buying healthcare applications, Touchstone's powerful automated tests will ensure true interoperability.
