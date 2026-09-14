@@ -164,7 +164,7 @@ describe('Member org badges', () => {
   });
 
   it('lists HL7 FAST Accelerator on exactly these members', () => {
-    expect(carrying('HL7 FAST Accelerator')).toEqual(['aegis.md', 'smile-digital-health.md']);
+    expect(carrying('HL7 FAST Accelerator')).toEqual(['aegis.md']);
   });
 
   it('stops at the next top-level key instead of reading the block below', () => {
