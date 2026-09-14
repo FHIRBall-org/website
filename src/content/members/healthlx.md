@@ -46,6 +46,11 @@ memberArticles:
     url: "https://publuu.com/flip-book/360091/1003731"
   - title: "CMS-0057-F Required Standards and Recommended IGs by API"
     url: "https://publuu.com/flip-book/360091/1003730"
+orgLogos:
+  - name: "HL7 International"
+    logo: "/images/org-logos/HL7-IntNoeffects300px.png"
+    url: "https://www.hl7.org"
+    cardBadge: true
 ---
 
 HealthLX focuses on healthcare interoperability with the goal to remove data complexity and turn regulatory requirements into long-term strategic advantage.

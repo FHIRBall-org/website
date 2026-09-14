@@ -33,6 +33,11 @@ industries:
   - "Government Administration"
   - "Medical Devices / Equipment / IoT"
   - "Health IT Vendors"
+orgLogos:
+  - name: "HL7 FAST Accelerator"
+    logo: "/images/org-logos/HL7 FAST.png"
+    url: "https://www.hl7.org/fast"
+    cardBadge: true
 ---
 
 Smile Digital Health is a global leader in FHIR-native data infrastructure, intelligent automations, and clinical quality intelligence. Our platform unifies, structures, and standardizes data across diverse EHRs and systems, turning fragmented information into a single, unified, high-quality source of truth. We help organizations operationalize clinical knowledge by translating evidence-based guidelines into computable, reusable tools that support decision making at scale. Our proven FHIR-first platform powers national and regional health networks across more than 23 countries, and our open, standards-based clinical reasoning engine delivers actionable intelligence directly into real workflows. Organizations rely on Smile to improve data quality, strengthen compliance, reduce clinical and operational burden, and accelerate transformation without replacing existing systems. Smile prepares providers, payers, researchers, and life sciences teams for a connected future by making high-quality data accessible, interoperable, and ready for intelligence that guides care when and where it matters most.

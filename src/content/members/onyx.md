@@ -31,7 +31,11 @@ industries:
   - "Provider Organizations / Health Systems"
   - "Healthcare Technology Vendors"
   - "Government Healthcare Programs"
-
+orgLogos:
+  - name: "HL7 International"
+    logo: "/images/org-logos/HL7-IntNoeffects300px.png"
+    url: "https://www.hl7.org"
+    cardBadge: true
 ---
 
 **From Interoperability to Intelligence**

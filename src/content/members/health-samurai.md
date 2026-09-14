@@ -45,7 +45,11 @@ memberArticles:
     url: "https://www.health-samurai.io/articles/configuring-tuning-patient-matching-model"
   - title: "Termbox: A FHIR Terminology Server (Introduction)"
     url: "https://www.health-samurai.io/articles/introducing-termbox"
-
+orgLogos:
+  - name: "HL7 International"
+    logo: "/images/org-logos/HL7-IntNoeffects300px.png"
+    url: "https://www.hl7.org"
+    cardBadge: true
 ---
 
 Building healthcare applications is complex and time-consuming, and we know this firsthand — we've been creating custom health IT solutions since 2004.

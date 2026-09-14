@@ -29,6 +29,11 @@ industries:
   - "Pharmaceutical"
   - "Government Administration"
   - "Medical Devices / Equipment / IoT"
+orgLogos:
+  - name: "HL7 International"
+    logo: "/images/org-logos/HL7-IntNoeffects300px.png"
+    url: "https://www.hl7.org"
+    cardBadge: true
 ---
 
 1upHealth is unlocking data to improve healthcare experience, enabling innovation and connectivity. As a leader in FHIR interoperability, our core belief is that unlocking the power that lies within health data can improve outcomes across the industry. We are on a mission to make it easier to access, aggregate, and share healthcare data. Through our secure FHIR platform, we offer a solution to break the barriers that hinder innovation and interoperability, as well as reduce time, delays and costs.
