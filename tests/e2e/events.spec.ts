@@ -22,7 +22,7 @@ test.describe('Events Page', () => {
 
   test('should display event titles and dates', async ({ page }) => {
     await expect(page.getByRole('heading', { name: /DMEA/ })).toBeVisible();
-    await expect(page.getByText(/April \d+, 2023/).first()).toBeVisible();
+    await expect(page.getByText(/April \d+, 2026/).first()).toBeVisible();
   });
 
   test('should have Read More links that open in new tab', async ({ page }) => {
