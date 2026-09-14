@@ -18,6 +18,7 @@ dist/
 
 # Claude
 .claude/
+.superpowers/
 
 # OS
 .DS_Store
