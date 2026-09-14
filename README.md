@@ -94,6 +94,14 @@ npm run test:e2e:ui
 npm run test:all
 ```
 
+The E2E suite starts its own Astro dev server on a free port chosen at run time,
+so it does not collide with anything already listening — including a dev server
+you are running yourself on 4321. To pin the port instead:
+
+```bash
+PLAYWRIGHT_PORT=4321 npm run test:e2e
+```
+
 ## Adding Members
 
 1. Add member logo to `public/images/members/`

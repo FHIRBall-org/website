@@ -31,6 +31,11 @@ npm run test:e2e     # Run Playwright E2E tests
 npm run test:all     # Run all tests
 ```
 
+The E2E suite picks a free port for its Astro dev server at run time; set
+`PLAYWRIGHT_PORT` to pin one. Astro has no `--strictPort`, so a hardcoded
+occupied port made it bind the next port up while Playwright polled the
+original until its 60s timeout.
+
 ## Project Structure
 
 ```
